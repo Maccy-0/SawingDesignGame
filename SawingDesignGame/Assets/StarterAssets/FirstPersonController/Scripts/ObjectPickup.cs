@@ -7,11 +7,14 @@ public class ObjectPickup : MonoBehaviour
     public Transform pickupLocation;
     private Rigidbody pickupRigidbody;
     private bool isHolding;
+    private Transform pickupTransform;
     public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
+        pickupTransform = pickupObj.transform;
+        isHolding = false;
     }
 
     // Update is called once per frame
@@ -19,16 +22,25 @@ public class ObjectPickup : MonoBehaviour
     {
         if (isHolding)
         {
-            pickupObj.transform.position = Vector3.MoveTowards(pickupObj.transform.position, pickupLocation.position, speed * Time.deltaTime);
-            pickupObj.transform.position = Vector3.RotateTowards(pickupObj.transform.position, pickupLocation.position, speed * Time.deltaTime, 1);
+            print("moving Object");
+            /*pickupObj.transform.rotation = Quaternion.Lerp(pickupTransform.rotation, new Quaternion(0, 0, 0, 0), speed * Time.deltaTime);*/
+            pickupObj.transform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.position, speed * Time.deltaTime);
+            
+            /*pickupObj.transform.rotation = Quaternion.Lerp(pickupObj.transform.rotation, new Quaternion(0,0,0,0), speed * Time.deltaTime);*/
             /*pickupObj.transform.LookAt(pickupLocation.position);*/
-           /* pickupObj.transform.eulerAngles = pickupLocation.eulerAngles;*/
+            /* pickupObj.transform.eulerAngles = pickupLocation.eulerAngles;*/
         }
-        if (Input.GetKeyDown(KeyCode.E)) 
+
+        if (Input.GetKeyDown(KeyCode.E) && !isHolding) 
         {
             pickupObj.transform.parent = pickupLocation;
             isHolding = true;
             pickupRigidbody.useGravity = false;
+        } else if (Input.GetKeyDown(KeyCode.E) && isHolding)
+        {
+            pickupObj.transform.parent = null;
+            isHolding = false;
+            pickupRigidbody.useGravity = true;
         }
     }
 }
