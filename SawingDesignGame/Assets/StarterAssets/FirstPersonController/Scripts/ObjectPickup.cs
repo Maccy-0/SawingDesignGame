@@ -3,17 +3,17 @@ using UnityEngine;
 public class ObjectPickup : MonoBehaviour
 {
 
-    public GameObject pickupObj;
-    public Transform pickupLocation;
+    private GameObject pickupObj;
+    public GameObject pickupLocation;
     private Rigidbody pickupRigidbody;
+    private Rigidbody pickuplocationRigidbody;
     private bool isHolding;
     private Transform pickupTransform;
     public float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
-        pickupTransform = pickupObj.transform;
+        pickuplocationRigidbody = pickupLocation.GetComponent<Rigidbody>();
         isHolding = false;
     }
 
@@ -22,13 +22,12 @@ public class ObjectPickup : MonoBehaviour
     {
         if (isHolding)
         {
-            print("moving Object");
-            pickupObj.transform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.position, speed * Time.deltaTime);
+            pickupTransform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.transform.position, speed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !isHolding) 
+        if (Input.GetKeyDown(KeyCode.E) && !isHolding && pickupObj != null) 
         {
-            pickupObj.transform.parent = pickupLocation;
+            pickupObj.transform.parent = pickupLocation.transform;
             isHolding = true;
             pickupRigidbody.useGravity = false;
         } else if (Input.GetKeyDown(KeyCode.E) && isHolding)
@@ -36,6 +35,20 @@ public class ObjectPickup : MonoBehaviour
             pickupObj.transform.parent = null;
             isHolding = false;
             pickupRigidbody.useGravity = true;
+        }
+
+        
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isHolding)
+        {
+            Debug.Log(other.gameObject.name);
+            pickupObj = other.gameObject;
+            pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
+            pickupTransform = pickupObj.transform;
         }
     }
 }
