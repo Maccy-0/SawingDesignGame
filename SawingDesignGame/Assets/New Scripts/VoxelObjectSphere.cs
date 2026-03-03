@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VoxelObject : MonoBehaviour
+public class VoxelObjectSphere : MonoBehaviour
 {
     public int sizeX = 32;
     public int sizeY = 32;
@@ -21,33 +21,33 @@ public class VoxelObject : MonoBehaviour
         voxels = new bool[sizeX, sizeY, sizeZ];
 
         // Fill solid
-        for (int x = 0; x < sizeX; x++)
-        {
-            for (int y = 0; y < sizeY; y++)
-            {
-                for (int z = 0; z < sizeZ; z++)
-                {
-                    voxels[x, y, z] = true;
-                }
-            }
-        }
-
-        //Circle
-        //Vector3 center = new Vector3(
-        //    sizeX - 1,
-        //    sizeY - 1,
-        //    sizeZ - 1
-        //    ) * 0.5f;
-        //
-        //float radius = Mathf.Min(sizeX, sizeY, sizeZ) * 0.5f;
-        //
         //for (int x = 0; x < sizeX; x++)
+        //{
         //    for (int y = 0; y < sizeY; y++)
+        //    {
         //        for (int z = 0; z < sizeZ; z++)
         //        {
-        //            Vector3 p = new Vector3(x, y, z);
-        //            voxels[x, y, z] = (Vector3.Distance(p, center) <= radius);
+        //            voxels[x, y, z] = true;
         //        }
+        //    }
+        //}
+
+        //Circle
+        Vector3 center = new Vector3(
+            sizeX - 1,
+            sizeY - 1,
+            sizeZ - 1
+            ) * 0.5f;
+
+        float radius = Mathf.Min(sizeX, sizeY, sizeZ) * 0.5f;
+
+        for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
+                for (int z = 0; z < sizeZ; z++)
+                {
+                    Vector3 p = new Vector3(x, y, z);
+                    voxels[x, y, z] = (Vector3.Distance(p, center) <= radius);
+                }
     }
 
     void Start()
@@ -283,4 +283,3 @@ public class VoxelObject : MonoBehaviour
 
 
 }
-
