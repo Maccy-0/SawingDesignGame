@@ -23,12 +23,7 @@ public class ObjectPickup : MonoBehaviour
         if (isHolding)
         {
             print("moving Object");
-            /*pickupObj.transform.rotation = Quaternion.Lerp(pickupTransform.rotation, new Quaternion(0, 0, 0, 0), speed * Time.deltaTime);*/
             pickupObj.transform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.position, speed * Time.deltaTime);
-            
-            /*pickupObj.transform.rotation = Quaternion.Lerp(pickupObj.transform.rotation, new Quaternion(0,0,0,0), speed * Time.deltaTime);*/
-            /*pickupObj.transform.LookAt(pickupLocation.position);*/
-            /* pickupObj.transform.eulerAngles = pickupLocation.eulerAngles;*/
         }
 
         if (Input.GetKeyDown(KeyCode.E) && !isHolding) 
