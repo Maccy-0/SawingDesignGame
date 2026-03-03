@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObjectPickup : MonoBehaviour
 {
 
-    private GameObject pickupObj;
+    public GameObject pickupObj;
     public GameObject pickupLocation;
     private Rigidbody pickupRigidbody;
     private Rigidbody pickuplocationRigidbody;
@@ -25,12 +25,12 @@ public class ObjectPickup : MonoBehaviour
             pickupTransform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.transform.position, speed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !isHolding && pickupObj != null) 
+        if (Input.GetKeyDown(KeyCode.E) && !isHolding && pickupObj != null) //Pickup Object
         {
             pickupObj.transform.parent = pickupLocation.transform;
             isHolding = true;
             pickupRigidbody.useGravity = false;
-        } else if (Input.GetKeyDown(KeyCode.E) && isHolding)
+        } else if (Input.GetKeyDown(KeyCode.E) && isHolding) //Drop Object
         {
             pickupObj.transform.parent = null;
             isHolding = false;
@@ -43,12 +43,24 @@ public class ObjectPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isHolding)
+        if (!isHolding) //Update the current selected object
         {
             Debug.Log(other.gameObject.name);
             pickupObj = other.gameObject;
             pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
             pickupTransform = pickupObj.transform;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (!isHolding && pickupObj != null)
+        {
+            if (other.gameObject.name == pickupObj.name)
+            {
+                pickupObj = null;
+                Debug.Log("left obj");
+            }
+            
         }
     }
 }
