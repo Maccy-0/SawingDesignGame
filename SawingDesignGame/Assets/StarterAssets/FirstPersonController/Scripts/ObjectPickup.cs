@@ -6,7 +6,6 @@ public class ObjectPickup : MonoBehaviour
     public GameObject pickupObj;
     public GameObject pickupLocation;
     private Rigidbody pickupRigidbody;
-    private Rigidbody pickuplocationRigidbody;
     private bool isHolding;
     private Transform pickupTransform;
     public float speed;
