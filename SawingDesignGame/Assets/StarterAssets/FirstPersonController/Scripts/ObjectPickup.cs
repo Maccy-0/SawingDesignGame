@@ -12,7 +12,7 @@ public class ObjectPickup : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pickuplocationRigidbody = pickupLocation.GetComponent<Rigidbody>();
+        //pickuplocationRigidbody = pickupLocation.GetComponent<Rigidbody>();
         isHolding = false;
     }
 
