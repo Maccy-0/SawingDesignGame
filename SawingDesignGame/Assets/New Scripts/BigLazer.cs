@@ -15,6 +15,8 @@ public class BigLazer : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        laserBounds = laserCollider.bounds;
+
 
         var voxelObj = other.GetComponent<VoxelObject>();
         if (voxelObj != null)

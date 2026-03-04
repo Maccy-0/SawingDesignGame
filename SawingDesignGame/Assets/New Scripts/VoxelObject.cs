@@ -208,8 +208,11 @@ public class VoxelObject : MonoBehaviour
                         Vector3 normal = axis[d] * faceDir[n];
                         Vector3 quadPos = basePos;
 
-                        if (faceDir[n] <= 0)
+                        if (faceDir[n] < 0)
                             quadPos += axis[d] * voxelSize;
+
+                        //if (faceDir[n] > 0)
+                        //    quadPos += axis[d] * voxelSize;
 
 
                         AddQuad(
