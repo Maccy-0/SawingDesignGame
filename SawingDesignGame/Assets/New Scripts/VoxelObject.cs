@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VoxelObject : MonoBehaviour
@@ -15,10 +16,20 @@ public class VoxelObject : MonoBehaviour
     MeshFilter objectMeshFilter;
     MeshCollider objectMeshCollider;
 
+    Vector3 voxelOriginOffset;
 
     void Awake()
     {
         voxels = new bool[sizeX, sizeY, sizeZ];
+        
+        voxelOriginOffset = new Vector3(
+            sizeX * voxelSize * 0.5f,
+            sizeY * voxelSize * 0.5f,
+            sizeZ * voxelSize * 0.5f
+            );
+
+
+
 
         // Fill solid
         for (int x = 0; x < sizeX; x++)
@@ -67,18 +78,22 @@ public class VoxelObject : MonoBehaviour
     Vector3 VoxelToWorld(int x, int y, int z)
     {
         Vector3 localPos = new Vector3(
-            (x + 0.5f) * voxelSize,
-            (y + 0.5f) * voxelSize,
-            (z + 0.5f) * voxelSize
+        (x + 0.5f) * voxelSize,
+        (y + 0.5f) * voxelSize,
+        (z + 0.5f) * voxelSize
         );
 
+        localPos -= voxelOriginOffset;
+
         return transform.TransformPoint(localPos);
+
     }
 
 
     bool WorldToVoxel(Vector3 worldPos, out int x, out int y, out int z)
     {
         Vector3 local = transform.InverseTransformPoint(worldPos);
+        local += voxelOriginOffset;
 
         x = Mathf.FloorToInt(local.x / voxelSize);
         y = Mathf.FloorToInt(local.y / voxelSize);
@@ -88,6 +103,7 @@ public class VoxelObject : MonoBehaviour
             x >= 0 && x < sizeX &&
             y >= 0 && y < sizeY &&
             z >= 0 && z < sizeZ;
+
     }
 
     bool IsSolid(int x, int y, int z)
@@ -119,7 +135,8 @@ public class VoxelObject : MonoBehaviour
                         x * voxelSize,
                         y * voxelSize,
                         z * voxelSize
-                    );
+                        ) - voxelOriginOffset;
+
 
                     AddFaces(x, y, z, basePos, vertices, triangles, normals);
                 }
