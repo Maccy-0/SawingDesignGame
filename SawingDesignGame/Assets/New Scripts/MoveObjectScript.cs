@@ -35,6 +35,8 @@ public class MoveObjectScript : MonoBehaviour
             && laserNewPos.z > constraintR)
         {
             laser.transform.position = laserNewPos;
+            laserRailX.transform.position = new Vector3(laserNewPos.x,laserRailX.transform.position.y, laserRailX.transform.position.z);
+            laserRailZ.transform.position = new Vector3(laserRailZ.transform.position.x, laserRailX.transform.position.y, laserNewPos.z);
         }
     }
 }
