@@ -18,14 +18,22 @@ public class LaserButtonCommand : MonoBehaviour
         {
             buttonOn = true;
             this.GetComponentInParent<MoveObjectScript>().activeButton = this.transform.name;
-        } else if (buttonActive && buttonOn && Input.GetKeyDown(KeyCode.E) || this.GetComponentInParent<MoveObjectScript>().activeButton != this.transform.name)
+        } else if (buttonActive && buttonOn && Input.GetKeyDown(KeyCode.E))
         {
-            this.GetComponentInParent<MoveObjectScript>().laserDirection = Vector3.zero;
+            this.GetComponentInParent<MoveObjectScript>().activeButton = "None";
             buttonOn = false;
         }
         if (buttonOn)
         {
             this.GetComponentInParent<MoveObjectScript>().laserDirection = newDirection;
+        }
+
+        if (this.GetComponentInParent<MoveObjectScript>().activeButton == this.transform.name)
+        {
+            buttonOn = true;
+        } else
+        {
+            buttonOn = false;
         }
     }
 
