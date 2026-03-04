@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VoxelObject : MonoBehaviour
@@ -15,10 +16,20 @@ public class VoxelObject : MonoBehaviour
     MeshFilter objectMeshFilter;
     MeshCollider objectMeshCollider;
 
+    Vector3 voxelOriginOffset;
 
     void Awake()
     {
         voxels = new bool[sizeX, sizeY, sizeZ];
+        
+        voxelOriginOffset = new Vector3(
+            sizeX * voxelSize * 0.5f,
+            sizeY * voxelSize * 0.5f,
+            sizeZ * voxelSize * 0.5f
+            );
+
+
+
 
         // Fill solid
         for (int x = 0; x < sizeX; x++)
@@ -67,12 +78,15 @@ public class VoxelObject : MonoBehaviour
     Vector3 VoxelToWorld(int x, int y, int z)
     {
         Vector3 localPos = new Vector3(
-            (x + 0.5f) * voxelSize,
-            (y + 0.5f) * voxelSize,
-            (z + 0.5f) * voxelSize
+        (x + 0.5f) * voxelSize,
+        (y + 0.5f) * voxelSize,
+        (z + 0.5f) * voxelSize
         );
 
+        localPos -= voxelOriginOffset;
+
         return transform.TransformPoint(localPos);
+
     }
 
 
