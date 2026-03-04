@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ObjectPickup : MonoBehaviour
@@ -5,6 +6,7 @@ public class ObjectPickup : MonoBehaviour
 
     public GameObject pickupObj;
     public GameObject pickupLocation;
+    public TextMeshProUGUI pickupText;
     private Rigidbody pickupRigidbody;
     private bool isHolding;
     private Transform pickupTransform;
@@ -14,6 +16,7 @@ public class ObjectPickup : MonoBehaviour
     {
         //pickuplocationRigidbody = pickupLocation.GetComponent<Rigidbody>();
         isHolding = false;
+        pickupText.text = "";
     }
 
     // Update is called once per frame
@@ -44,10 +47,11 @@ public class ObjectPickup : MonoBehaviour
     {
         if (!isHolding) //Update the current selected object
         {
-            Debug.Log(other.gameObject.name);
             pickupObj = other.gameObject;
             pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
             pickupTransform = pickupObj.transform;
+            pickupText.text = pickupObj.name;
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -57,7 +61,7 @@ public class ObjectPickup : MonoBehaviour
             if (other.gameObject.name == pickupObj.name)
             {
                 pickupObj = null;
-                Debug.Log("left obj");
+                pickupText.text = "";
             }
             
         }
