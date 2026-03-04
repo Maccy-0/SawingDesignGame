@@ -50,7 +50,7 @@ public class ObjectPickup : MonoBehaviour
             pickupObj = other.gameObject;
             pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
             pickupTransform = pickupObj.transform;
-            pickupText.text = pickupObj.name;
+            pickupText.text = "Press [E] to pick up " + pickupObj.name;
 
         }
     }
