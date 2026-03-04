@@ -194,16 +194,23 @@ public class VoxelObject : MonoBehaviour
                         x[v] = j;
 
                         Vector3 basePos = new Vector3(
-                            x[0] * voxelSize,
-                            x[1] * voxelSize,
-                            x[2] * voxelSize
-                        ) - voxelOriginOffset;
+                            (x[0]) * voxelSize,
+                            (x[1]) * voxelSize,
+                            (x[2]) * voxelSize
+                        );
+
+                        if (faceDir[n] > 0)
+                        {
+                            basePos[d] += voxelSize;
+                        }
+
+                        basePos -= voxelOriginOffset;
 
                         Vector3 du = Vector3.zero;
                         Vector3 dv = Vector3.zero;
 
-                        du[u] = w * voxelSize;
-                        dv[v] = h * voxelSize;
+                        du[u] = (w-0) * voxelSize;
+                        dv[v] = (h-0) * voxelSize;
 
                         Vector3 normal = axis[d] * faceDir[n];
                         Vector3 quadPos = basePos;
@@ -275,6 +282,7 @@ public class VoxelObject : MonoBehaviour
     List<Vector3> norms,
     bool flip)
     {
+
         int start = verts.Count;
 
         verts.Add(pos);
