@@ -3,20 +3,40 @@ using UnityEngine;
 
 public class MoveObjectScript : MonoBehaviour
 {
-    public List<GameObject> ConveyerObjList;
+    public GameObject laser;
+    public GameObject laserRailX;
+    public GameObject laserRailZ;
+    public Vector3 laserDirection;
+    public float relativeContraintX, relativeContraintZ;
+
+    private float constraintU, constraintD, constraintL, constraintR;
+    private Vector3 laserPos;
+    private Vector3 laserNewPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        laserPos = laser.transform.position;
+        constraintU = laserPos.x + relativeContraintX;
+        constraintD = laserPos.x - relativeContraintX;
+        constraintL = laserPos.z + relativeContraintZ;
+        constraintR = laserPos.z - relativeContraintZ;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("update");
-        for (int i = 0; i < ConveyerObjList.Count; i++)
+        laserPos = laser.transform.position;
+        laserNewPos = laserPos + laserDirection * Time.deltaTime;
+
+        //Check to see if the new positon is valid
+        if (laserNewPos.x > constraintD 
+            && laserNewPos.x < constraintU
+            && laserNewPos.z < constraintL
+            && laserNewPos.z > constraintR)
         {
-            Debug.Log(ConveyerObjList[i].name);
+            laser.transform.position = laserNewPos;
+            laserRailX.transform.position = new Vector3(laserNewPos.x,laserRailX.transform.position.y, laserRailX.transform.position.z);
+            laserRailZ.transform.position = new Vector3(laserRailZ.transform.position.x, laserRailX.transform.position.y, laserNewPos.z);
         }
     }
 }
