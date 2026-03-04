@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class VoxelObject : MonoBehaviour
 {
-    public int sizeX = 32;
-    public int sizeY = 32;
-    public int sizeZ = 32;
+    int sizeX = 32;
+    int sizeY = 32;
+    int sizeZ = 32;
 
-    public float voxelSize = 0.1f;
+    float voxelSize = 0.5f;
+    float updatedVoxelSize;
 
     public bool[,,] voxels;
 
@@ -21,6 +22,12 @@ public class VoxelObject : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log(this.transform.localScale);
+        updatedVoxelSize = (voxelSize*this.transform.localScale.x / sizeX);
+        voxelSize = updatedVoxelSize;
+
+
+
         voxels = new bool[sizeX, sizeY, sizeZ];
         
         voxelOriginOffset = new Vector3(
