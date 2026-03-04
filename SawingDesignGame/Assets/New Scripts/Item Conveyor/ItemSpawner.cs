@@ -23,7 +23,7 @@ public class ItemSpawner : MonoBehaviour
         {  //Change to a different input or automatic once last object despawned
             //if (currentObject == null)
            // {
-                chosenPositionInArray = Random.Range(0, earthObjects.Length);   //selects which index in the list of objects to choose
+                chosenPositionInArray = Random.Range(0, earthObjects.Length+1);   //selects which index in the list of objects to choose
                 currentObject = earthObjects[chosenPositionInArray];    //selects the object that is in the chosen index as the one to spawn
                     AbductAnObject();
                 objectSpawned = true;

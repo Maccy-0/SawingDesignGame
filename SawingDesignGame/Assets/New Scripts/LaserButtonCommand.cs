@@ -31,9 +31,12 @@ public class LaserButtonCommand : MonoBehaviour
         if (this.GetComponentInParent<MoveObjectScript>().activeButton == this.transform.name)
         {
             buttonOn = true;
+            GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.white);
         } else
         {
             buttonOn = false;
+
+            GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.black);
         }
     }
 

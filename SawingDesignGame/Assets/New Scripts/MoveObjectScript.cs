@@ -7,7 +7,7 @@ public class MoveObjectScript : MonoBehaviour
     public GameObject laser;
     public GameObject laserRailX;
     public GameObject laserRailZ;
-    public string activeButton = "None";
+    public string activeButton;
     public Vector3 laserDirection;
     public float relativeContraintX, relativeContraintZ;
 
@@ -22,6 +22,7 @@ public class MoveObjectScript : MonoBehaviour
         constraintD = laserPos.x - relativeContraintX;
         constraintL = laserPos.z + relativeContraintZ;
         constraintR = laserPos.z - relativeContraintZ;
+        activeButton = "None";
     }
 
     // Update is called once per frame
