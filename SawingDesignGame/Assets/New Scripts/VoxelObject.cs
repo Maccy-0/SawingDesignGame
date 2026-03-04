@@ -93,6 +93,7 @@ public class VoxelObject : MonoBehaviour
     bool WorldToVoxel(Vector3 worldPos, out int x, out int y, out int z)
     {
         Vector3 local = transform.InverseTransformPoint(worldPos);
+        local += voxelOriginOffset;
 
         x = Mathf.FloorToInt(local.x / voxelSize);
         y = Mathf.FloorToInt(local.y / voxelSize);
@@ -102,6 +103,7 @@ public class VoxelObject : MonoBehaviour
             x >= 0 && x < sizeX &&
             y >= 0 && y < sizeY &&
             z >= 0 && z < sizeZ;
+
     }
 
     bool IsSolid(int x, int y, int z)
@@ -133,7 +135,8 @@ public class VoxelObject : MonoBehaviour
                         x * voxelSize,
                         y * voxelSize,
                         z * voxelSize
-                    );
+                        ) - voxelOriginOffset;
+
 
                     AddFaces(x, y, z, basePos, vertices, triangles, normals);
                 }
