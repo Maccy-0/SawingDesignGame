@@ -17,6 +17,7 @@ public class VoxelObject : MonoBehaviour
     MeshCollider objectMeshCollider;
 
     Vector3 voxelOriginOffset;
+    int solidVoxelCount;
 
     void Awake()
     {
@@ -42,6 +43,8 @@ public class VoxelObject : MonoBehaviour
                 }
             }
         }
+
+        solidVoxelCount = sizeX * sizeY * sizeZ;
 
         //Circle
         //Vector3 center = new Vector3(
@@ -282,15 +285,21 @@ public class VoxelObject : MonoBehaviour
                         if (laserBounds.Contains(worldPos))
                         {
                             voxels[x, y, z] = false;
-                            removedThisFrame += 1;
+                            removedThisFrame++;
+                            solidVoxelCount--;
+
                         }
                     }
                 }
             }
         }
 
-        if (removedThisFrame > 0)
-            Debug.Log($"Removed {removedThisFrame} voxels");
+        if (solidVoxelCount <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log(solidVoxelCount);
 
         if (removedThisFrame > 0)
             RebuildMesh();
