@@ -6,6 +6,7 @@ public class ObjectPickup : MonoBehaviour
 
     public GameObject pickupObj;
     public GameObject pickupLocation;
+    public GameObject controlConsole;
     public TextMeshProUGUI pickupText;
     private Rigidbody pickupRigidbody;
     private bool isHolding;
@@ -50,12 +51,17 @@ public class ObjectPickup : MonoBehaviour
         if (!isHolding) //Update the current selected object
         {
             pickupObj = other.gameObject;
-
-            if (pickupObj.name != pickupLocation.transform.parent.transform.parent.name)
+            if(pickupObj.transform.parent != null)
+            {
+                Debug.Log(pickupObj.transform.parent.name);
+            }
+            
+            if (pickupObj.name != pickupLocation.transform.parent.transform.parent.name && pickupObj.transform.parent == null)
             {
                 pickupText.text = "Press [E] to pick up " + pickupObj.name;
                 pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
                 pickupTransform = pickupObj.transform;
+                
             }
             else
             {
@@ -76,3 +82,4 @@ public class ObjectPickup : MonoBehaviour
         }
     }
 }
+/*&& pickupObj.transform.parent.name != controlConsole.name*/
