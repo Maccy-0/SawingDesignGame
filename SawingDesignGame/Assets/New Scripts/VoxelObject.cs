@@ -8,8 +8,7 @@ public class VoxelObject : MonoBehaviour
     int sizeY = 32;
     int sizeZ = 32;
 
-    float voxelSize = 0.5f;
-    float updatedVoxelSize;
+    float voxelSize = 1/32f;
 
     public bool[,,] voxels;
 
@@ -22,9 +21,6 @@ public class VoxelObject : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log(this.transform.localScale);
-        updatedVoxelSize = (voxelSize*this.transform.localScale.x / sizeX);
-        voxelSize = updatedVoxelSize;
 
 
 
