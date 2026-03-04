@@ -15,12 +15,20 @@ public class MoveObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("update");
         for (int i = 0; i < ConveyerObjList.Count; i++)
         {
             Debug.Log(ConveyerObjList[i].name);
             rb = ConveyerObjList[i].GetComponent<Rigidbody>();
             rb.AddForce(forceDirection);
+            ConveyerObjList.Remove(ConveyerObjList[i]);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<Rigidbody>().useGravity == true)
+        {
+            ConveyerObjList.Add(other.gameObject);
         }
     }
 }

@@ -22,6 +22,7 @@ public class ObjectPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(pickupLocation.transform.parent.name);
         if (isHolding)
         {
             pickupTransform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.transform.position, speed * Time.deltaTime);
@@ -50,11 +51,16 @@ public class ObjectPickup : MonoBehaviour
         if (!isHolding) //Update the current selected object
         {
             pickupObj = other.gameObject;
-            pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
-            pickupTransform = pickupObj.transform;
-            if (pickupObj.name != "Player")
+
+            if (pickupObj.name != pickupLocation.transform.parent.transform.parent.name)
             {
                 pickupText.text = "Press [E] to pick up " + pickupObj.name;
+                pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
+                pickupTransform = pickupObj.transform;
+            }
+            else
+            {
+                pickupObj = null;
             }
         }
     }
