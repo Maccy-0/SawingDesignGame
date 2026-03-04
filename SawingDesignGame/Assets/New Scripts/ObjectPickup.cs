@@ -32,11 +32,13 @@ public class ObjectPickup : MonoBehaviour
             pickupObj.transform.parent = pickupLocation.transform;
             isHolding = true;
             pickupRigidbody.useGravity = false;
+            pickupRigidbody.freezeRotation = true;
         } else if (Input.GetKeyDown(KeyCode.E) && isHolding) //Drop Object
         {
             pickupObj.transform.parent = null;
             isHolding = false;
             pickupRigidbody.useGravity = true;
+            pickupRigidbody.freezeRotation = false;
         }
 
         
