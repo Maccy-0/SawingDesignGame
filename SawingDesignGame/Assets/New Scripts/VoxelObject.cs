@@ -17,6 +17,7 @@ public class VoxelObject : MonoBehaviour
     MeshCollider objectMeshCollider;
 
     Vector3 voxelOriginOffset;
+    int solidVoxelCount;
 
     void Awake()
     {
@@ -42,6 +43,8 @@ public class VoxelObject : MonoBehaviour
                 }
             }
         }
+
+        solidVoxelCount = sizeX * sizeY * sizeZ;
 
         //Circle
         //Vector3 center = new Vector3(
@@ -118,7 +121,195 @@ public class VoxelObject : MonoBehaviour
         return voxels[x, y, z];
     }
 
+    void GreedyMesh(
+    List<Vector3> verts,
+    List<int> tris,
+    List<Vector3> norms)
+    {
+        int[] dims = { sizeX, sizeY, sizeZ };
+        bool[] mask = new bool[sizeX * sizeY];
+        int[] faceDir = new int[sizeX * sizeY];
+
+        Vector3[] axis = {
+        Vector3.right,
+        Vector3.up,
+        Vector3.forward
+    };
+
+        for (int d = 0; d < 3; d++)
+        {
+            int u = (d + 1) % 3;
+            int v = (d + 2) % 3;
+
+            int[] x = new int[3];
+
+            for (x[d] = -1; x[d] < dims[d]; x[d]++)
+            {
+                int n = 0;
+
+                for (x[v] = 0; x[v] < dims[v]; x[v]++)
+                    for (x[u] = 0; x[u] < dims[u]; x[u]++)
+                    {
+                        bool a = (x[d] >= 0) && IsSolid(x[0], x[1], x[2]);
+                        bool b = (x[d] < dims[d] - 1) && IsSolid(
+                            x[0] + (d == 0 ? 1 : 0),
+                            x[1] + (d == 1 ? 1 : 0),
+                            x[2] + (d == 2 ? 1 : 0)
+                        );
+
+                        mask[n] = a != b;
+                        faceDir[n] = a ? 1 : -1;
+                        n++;
+
+                    }
+
+                n = 0;
+
+                for (int j = 0; j < dims[v]; j++)
+                    for (int i = 0; i < dims[u];)
+                    {
+                        if (!mask[n])
+                        {
+                            i++;
+                            n++;
+                            continue;
+                        }
+
+                        int w = 1;
+                        while (i + w < dims[u] && mask[n + w]) w++;
+
+                        int h = 1;
+                        while (j + h < dims[v])
+                        {
+                            for (int k = 0; k < w; k++)
+                                if (!mask[n + k + h * dims[u]])
+                                    goto done;
+
+                            h++;
+                        }
+
+                    done:
+
+                        x[u] = i;
+                        x[v] = j;
+
+                        Vector3 basePos = new Vector3(
+                            x[0] * voxelSize,
+                            x[1] * voxelSize,
+                            x[2] * voxelSize
+                        ) - voxelOriginOffset;
+
+                        Vector3 du = Vector3.zero;
+                        Vector3 dv = Vector3.zero;
+
+                        du[u] = w * voxelSize;
+                        dv[v] = h * voxelSize;
+
+                        Vector3 normal = axis[d] * faceDir[n];
+                        Vector3 quadPos = basePos;
+
+                        if (faceDir[n] < 0)
+                            quadPos += axis[d] * voxelSize;
+
+                        //if (faceDir[n] > 0)
+                        //    quadPos += axis[d] * voxelSize;
+
+
+                        AddQuad(
+                            quadPos,
+                            du,
+                            dv,
+                            normal,
+                            verts,
+                            tris,
+                            norms,
+                            faceDir[n] < 0
+                        );
+
+
+                        for (int l = 0; l < h; l++)
+                            for (int k = 0; k < w; k++)
+                                mask[n + k + l * dims[u]] = false;
+
+                        i += w;
+                        n += w;
+                    }
+            }
+        }
+    }
+
+
     void RebuildMesh()
+    {
+        if (solidVoxelCount <= 0)
+        {
+            objectMesh.Clear();
+            objectMeshCollider.sharedMesh = null;
+            return;
+        }
+
+        var vertices = new List<Vector3>();
+        var triangles = new List<int>();
+        var normals = new List<Vector3>();
+
+        GreedyMesh(vertices, triangles, normals);
+
+        objectMesh.Clear();
+        objectMesh.SetVertices(vertices);
+        objectMesh.SetTriangles(triangles, 0);
+        objectMesh.SetNormals(normals);
+        objectMesh.RecalculateBounds();
+
+        objectMeshCollider.sharedMesh = null;
+        objectMeshCollider.sharedMesh = objectMesh;
+
+    }
+
+    void AddQuad(
+    Vector3 pos,
+    Vector3 du,
+    Vector3 dv,
+    Vector3 normal,
+    List<Vector3> verts,
+    List<int> tris,
+    List<Vector3> norms,
+    bool flip)
+    {
+        int start = verts.Count;
+
+        verts.Add(pos);
+        verts.Add(pos + dv);
+        verts.Add(pos + du + dv);
+        verts.Add(pos + du);
+
+        if (flip)
+        {
+            tris.Add(start + 0);
+            tris.Add(start + 1);
+            tris.Add(start + 2);
+            tris.Add(start + 0);
+            tris.Add(start + 2);
+            tris.Add(start + 3);
+        }
+        else
+        {
+            tris.Add(start + 0);
+            tris.Add(start + 2);
+            tris.Add(start + 1);
+            tris.Add(start + 0);
+            tris.Add(start + 3);
+            tris.Add(start + 2);
+
+        }
+
+
+        for (int i = 0; i < 4; i++)
+            norms.Add(normal);
+    }
+
+
+
+    void OldRebuildMesh()
     {
         var vertices = new List<Vector3>();
         var triangles = new List<int>();
@@ -282,15 +473,21 @@ public class VoxelObject : MonoBehaviour
                         if (laserBounds.Contains(worldPos))
                         {
                             voxels[x, y, z] = false;
-                            removedThisFrame += 1;
+                            removedThisFrame++;
+                            solidVoxelCount--;
+
                         }
                     }
                 }
             }
         }
 
-        if (removedThisFrame > 0)
-            Debug.Log($"Removed {removedThisFrame} voxels");
+        if (solidVoxelCount <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Debug.Log(solidVoxelCount);
 
         if (removedThisFrame > 0)
             RebuildMesh();
