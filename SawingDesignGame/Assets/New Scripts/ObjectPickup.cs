@@ -22,7 +22,6 @@ public class ObjectPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(pickupLocation.transform.parent.name);
         if (isHolding)
         {
             pickupTransform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.transform.position, speed * Time.deltaTime);

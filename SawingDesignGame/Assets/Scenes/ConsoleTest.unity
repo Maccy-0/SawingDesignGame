@@ -3425,8 +3425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 256910481}
   laserDirection: {x: 0, y: 0, z: 0}
-  relativeContraintX: 4
-  relativeContraintZ: 4
 --- !u!4 &1943029956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
