@@ -7,6 +7,7 @@ public class MoveObjectScript : MonoBehaviour
     public GameObject laser;
     public GameObject laserRailX;
     public GameObject laserRailZ;
+    public string activeButton = "None";
     public Vector3 laserDirection;
     public float relativeContraintX, relativeContraintZ;
 
