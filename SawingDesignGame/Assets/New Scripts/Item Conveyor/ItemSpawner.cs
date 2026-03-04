@@ -9,7 +9,6 @@ public class ItemSpawner : MonoBehaviour
     float playTimer = 0;
     bool objectSpawned;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private Rigidbody objectRB;
     public ParticleSystem beamingParticles;
 
     void Start()
@@ -20,16 +19,15 @@ public class ItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {  //Change to a different input or automatic once last object despawned
-            if (currentObject == null)
-            {
+            //if (currentObject == null)
+           // {
                 chosenPositionInArray = Random.Range(0, earthObjects.Length);   //selects which index in the list of objects to choose
                 currentObject = earthObjects[chosenPositionInArray];    //selects the object that is in the chosen index as the one to spawn
                     AbductAnObject();
                 objectSpawned = true;
-            }
-
+           // }
         }
 
         if (objectSpawned == true) {
