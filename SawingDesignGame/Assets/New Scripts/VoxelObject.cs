@@ -208,8 +208,9 @@ public class VoxelObject : MonoBehaviour
                         Vector3 normal = axis[d] * faceDir[n];
                         Vector3 quadPos = basePos;
 
-                        if (faceDir[n] < 0)
+                        if (faceDir[n] <= 0)
                             quadPos += axis[d] * voxelSize;
+
 
                         AddQuad(
                             quadPos,
@@ -278,7 +279,7 @@ public class VoxelObject : MonoBehaviour
         verts.Add(pos + du + dv);
         verts.Add(pos + du);
 
-        if (!flip)
+        if (flip)
         {
             tris.Add(start + 0);
             tris.Add(start + 1);
@@ -295,6 +296,7 @@ public class VoxelObject : MonoBehaviour
             tris.Add(start + 0);
             tris.Add(start + 3);
             tris.Add(start + 2);
+
         }
 
 
