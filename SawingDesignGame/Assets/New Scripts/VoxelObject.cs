@@ -9,6 +9,7 @@ public class VoxelObject : MonoBehaviour
     int sizeZ = 32;
 
     float voxelSize = 1/32f;
+    Vector3 trueScale;
 
     public bool[,,] voxels;
 
@@ -16,13 +17,18 @@ public class VoxelObject : MonoBehaviour
     MeshFilter objectMeshFilter;
     MeshCollider objectMeshCollider;
 
+    Mesh sourceMesh;
+    MeshCollider voxelizeCollider;
+
+
     Vector3 voxelOriginOffset;
     int solidVoxelCount;
 
     void Awake()
     {
 
-
+        trueScale = this.transform.localScale;
+        this.transform.localScale = Vector3.one;
 
         voxels = new bool[sizeX, sizeY, sizeZ];
         
@@ -30,12 +36,17 @@ public class VoxelObject : MonoBehaviour
             sizeX * voxelSize * 0.5f,
             sizeY * voxelSize * 0.5f,
             sizeZ * voxelSize * 0.5f
-            );
+        );
 
+        SetupVoxelizer();
+        VoxelizeMesh();
+        CleanupVoxelizer();
 
+        solidVoxelCount = sizeX * sizeY * sizeZ;
 
-
+        this.transform.localScale = trueScale;
         // Fill solid
+        /*
         for (int x = 0; x < sizeX; x++)
         {
             for (int y = 0; y < sizeY; y++)
@@ -46,8 +57,7 @@ public class VoxelObject : MonoBehaviour
                 }
             }
         }
-
-        solidVoxelCount = sizeX * sizeY * sizeZ;
+        */
 
         //Circle
         //Vector3 center = new Vector3(
@@ -78,6 +88,89 @@ public class VoxelObject : MonoBehaviour
         objectMeshFilter.mesh = objectMesh;
 
         RebuildMesh();
+    }
+
+    void SetupVoxelizer()
+    {
+        var mf = GetComponent<MeshFilter>();
+        sourceMesh = mf.sharedMesh;
+
+        voxelizeCollider = gameObject.AddComponent<MeshCollider>();
+        voxelizeCollider.sharedMesh = sourceMesh;
+        voxelizeCollider.convex = false; // MUST be false
+
+        Debug.Log("Voxelizer collider enabled: " + voxelizeCollider.enabled);
+        Debug.Log("Mesh bounds: " + voxelizeCollider.bounds);
+
+    }
+
+    void VoxelizeMesh()
+    {
+        Vector3 testOrigin = voxelizeCollider.bounds.min - Vector3.right * 0.1f;
+
+        if (Physics.Raycast(
+                testOrigin,
+                Vector3.right,
+                out RaycastHit hit,
+                10f))
+        {
+            Debug.Log("TEST HIT: " + hit.collider.name);
+        }
+        else
+        {
+            Debug.Log("TEST MISS");
+        }
+
+
+
+        solidVoxelCount = 0;
+
+        Vector3 rayDir = Vector3.right; // fixed direction
+
+
+        float maxRayDist =
+            Mathf.Max(sizeX, sizeY, sizeZ) * voxelSize * 2f;
+        Debug.Log(maxRayDist);
+
+        for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
+                for (int z = 0; z < sizeZ; z++)
+                {
+
+                    Vector3 worldPos = VoxelToWorld(x, y, z);
+
+                    Vector3 rayStart =
+                        worldPos - rayDir * maxRayDist * 0.5f;
+
+                    RaycastHit[] hits = Physics.RaycastAll(
+                        rayStart,
+                        rayDir,
+                        maxRayDist,
+                        ~0,
+                        QueryTriggerInteraction.Ignore
+                    );
+
+                    int hitCount = 0;
+                    for (int i = 0; i < hits.Length; i++)
+                    {
+                        if (hits[i].collider == voxelizeCollider)
+                            hitCount++;
+                    }
+
+                    bool inside = (hitCount & 1) == 1;
+                    voxels[x, y, z] = inside;
+                    if (inside) solidVoxelCount++;
+
+                    Debug.Log("Hits: " + solidVoxelCount);
+
+                }
+    }
+
+    void CleanupVoxelizer()
+    {
+        Destroy(voxelizeCollider);
+        //Destroy(GetComponent<MeshRenderer>());
+        //Destroy(GetComponent<MeshFilter>());
     }
 
 
