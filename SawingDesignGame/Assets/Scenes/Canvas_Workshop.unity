@@ -119,6 +119,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38415750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5665794607063645516, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
+  m_PrefabInstance: {fileID: 1758781213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &38415755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38415750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.13, z: 0.04}
+  m_Center: {x: -0.0009650951, y: 0, z: 0.020677274}
+--- !u!54 &38415756
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38415750}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!65 &38415757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38415750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.13105032, z: 0.04}
+  m_Center: {x: -0.0009650951, y: 0, z: 0.020677274}
 --- !u!1 &48158076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,7 +2802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1775607563442518483, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 1775607563442518483, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2766,10 +2840,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: CouchRough
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6840896092867045537, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5665794607063645516, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 38415757}
+    - targetCorrespondingSourceObject: {fileID: 5665794607063645516, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 38415755}
+    - targetCorrespondingSourceObject: {fileID: 5665794607063645516, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 38415756}
   m_SourcePrefab: {fileID: 100100000, guid: 0f5e025066dd6484187f11d7a3b53f50, type: 3}
 --- !u!1 &1764214107
 GameObject:
