@@ -3434,6 +3434,7 @@ MonoBehaviour:
   ConveyerObjList:
   - {fileID: 220392692}
   - {fileID: 1871971107}
+  forceDirection: {x: 1, y: 0, z: 0}
 --- !u!4 &1943029956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
