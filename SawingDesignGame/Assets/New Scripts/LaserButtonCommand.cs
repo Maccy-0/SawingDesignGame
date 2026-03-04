@@ -3,6 +3,8 @@ using UnityEngine;
 public class LaserButtonCommand : MonoBehaviour
 {
     public Vector3 newDirection;
+    private bool buttonOn;
+    private bool buttonActive;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,15 +14,27 @@ public class LaserButtonCommand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*this.GetComponentInParent<MoveObjectScript>().laserDirection = new Vector3 (0, 0, 1);*/
+        if (buttonActive && Input.GetKeyDown(KeyCode.E))
+        {
+            buttonOn = true;
+        } else if (!buttonActive && Input.GetKeyDown(KeyCode.E))
+        {
+            buttonOn = false;
+        }
+        if (buttonOn)
+        {
+            this.GetComponentInParent<MoveObjectScript>().laserDirection = newDirection;
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("looking up");
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            this.GetComponentInParent<MoveObjectScript>().laserDirection = new Vector3(0, 0, 1);
-        }
+        buttonActive = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        buttonActive = false;
     }
 }
