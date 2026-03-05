@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class VoxelObject : MonoBehaviour
 {
-    int sizeX = 32;
-    int sizeY = 32;
-    int sizeZ = 32;
+    int sizeX = 64;
+    int sizeY = 64;
+    int sizeZ = 64;
 
-    float voxelSize = 1 / 32f;
+    float voxelSize = 1 / 64f;
     float trueScale;
 
     public bool[,,] voxels;
@@ -20,6 +21,7 @@ public class VoxelObject : MonoBehaviour
     Mesh sourceMesh;
     MeshCollider voxelizeCollider;
 
+    Rigidbody objectRB;
 
     Vector3 voxelOriginOffset;
     int solidVoxelCount;
@@ -37,9 +39,13 @@ public class VoxelObject : MonoBehaviour
     void Awake()
     {
         objectMeshFilter = GetComponent<MeshFilter>();
+        objectRB = GetComponent<Rigidbody>();
+
+        objectRB.useGravity = false;
+        objectRB.isKinematic = true;
 
         Debug.Log(objectMeshFilter.mesh.bounds.extents.x);
-        trueScale = 2*Mathf.Max(objectMeshFilter.mesh.bounds.extents.x, objectMeshFilter.mesh.bounds.extents.y, objectMeshFilter.mesh.bounds.extents.z);
+        trueScale = 4*Mathf.Max(objectMeshFilter.mesh.bounds.extents.x, objectMeshFilter.mesh.bounds.extents.y, objectMeshFilter.mesh.bounds.extents.z);
         voxelSize = voxelSize * trueScale;
         //trueScale = this.transform.localScale;
         //this.transform.localScale = Vector3.one;
@@ -96,6 +102,16 @@ public class VoxelObject : MonoBehaviour
     {
         InitRuntimeMesh();
         RebuildMesh();
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        //yield return new WaitForSeconds(0.1f);
+        yield return 0;
+
+        objectRB.useGravity = true;
+        objectRB.isKinematic = false;
     }
 
     void InitRuntimeMesh()
@@ -717,7 +733,7 @@ public class VoxelObject : MonoBehaviour
 
     void SpawnNewChunk(List<Vector3Int> island)
     {
-        GameObject go = new GameObject("Voxel Chunk");
+        GameObject go = new GameObject(gameObject.name + " Chunk");
         go.transform.position = transform.position;
         go.transform.rotation = transform.rotation;
         go.transform.localScale = transform.localScale;
