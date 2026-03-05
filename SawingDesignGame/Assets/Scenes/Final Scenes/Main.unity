@@ -1461,14 +1461,6 @@ PrefabInstance:
       propertyPath: spawnButton
       value: 
       objectReference: {fileID: 1312152185}
-    - target: {fileID: 8982991457044975813, guid: 862ec32c1ad024d4eab1c2ac627157a6, type: 3}
-      propertyPath: earthObjects.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8982991457044975813, guid: 862ec32c1ad024d4eab1c2ac627157a6, type: 3}
-      propertyPath: 'earthObjects.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8624544780078465175, guid: f04af0f4e2c8872468a619de28217004, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2611,8 +2603,8 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!1 &1312152185 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4514099669109266302, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-  m_PrefabInstance: {fileID: 2242662405267495363}
+  m_CorrespondingSourceObject: {fileID: 3531363593192638584, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+  m_PrefabInstance: {fileID: 5238704372520133306}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1325105011
 GameObject:
@@ -3840,8 +3832,8 @@ Light:
   m_EnableSpotReflector: 1
 --- !u!1 &1914413694 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8449773745345933984, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-  m_PrefabInstance: {fileID: 2242662405267495363}
+  m_CorrespondingSourceObject: {fileID: 8856049059531451814, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+  m_PrefabInstance: {fileID: 5238704372520133306}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916814130
 GameObject:
@@ -4448,87 +4440,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &2242662405267495363
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3503726985015747394, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 710c766e36333c54aa126cbb9798e7f2, type: 3}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.78972024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.61346716
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -75.681
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 1507377817}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: laserRailX
-      value: 
-      objectReference: {fileID: 1507377816}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: laserRailZ
-      value: 
-      objectReference: {fileID: 1507377815}
-    - target: {fileID: 6803160789988147121, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: displayText
-      value: 
-      objectReference: {fileID: 707940769}
-    - target: {fileID: 8449773745345933984, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_Name
-      value: Button Console
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947341087266912297, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: trashBeam
-      value: 
-      objectReference: {fileID: 926419385}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 317169d1c29d430418ea9278b126488b, type: 3}
 --- !u!1001 &5238704372520133306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4541,6 +4452,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sci-fi-Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 3660572401446092236, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 1507377817}
+    - target: {fileID: 3660572401446092236, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: laserRailX
+      value: 
+      objectReference: {fileID: 1507377816}
+    - target: {fileID: 3660572401446092236, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: laserRailZ
+      value: 
+      objectReference: {fileID: 1507377815}
     - target: {fileID: 4242430486038338485, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.977
@@ -4581,6 +4504,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 5894384463224381623, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 707940769}
+    - target: {fileID: 8327145340000331567, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: trashBeam
+      value: 
+      objectReference: {fileID: 926419385}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4766,5 +4697,4 @@ SceneRoots:
   - {fileID: 180455702}
   - {fileID: 1525861138}
   - {fileID: 825099659}
-  - {fileID: 2242662405267495363}
   - {fileID: 5238704372520133306}
