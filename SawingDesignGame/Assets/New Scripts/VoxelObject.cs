@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class VoxelObject : MonoBehaviour
 {
-    int sizeX = 32;
-    int sizeY = 32;
-    int sizeZ = 32;
+    int sizeX = 64;
+    int sizeY = 64;
+    int sizeZ = 64;
 
-    float voxelSize = 1 / 32f;
+    float voxelSize = 1 / 64f;
     float trueScale;
 
     public bool[,,] voxels;
