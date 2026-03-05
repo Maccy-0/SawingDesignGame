@@ -3302,11 +3302,6 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!4 &1658000063 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4242430486038338485, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
-  m_PrefabInstance: {fileID: 5238704372520133306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,11 +3837,6 @@ Light:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8856049059531451814, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
   m_PrefabInstance: {fileID: 5238704372520133306}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1914413696 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-  m_PrefabInstance: {fileID: 2242662405267495363}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916814130
 GameObject:
@@ -4453,110 +4443,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
-<<<<<<< HEAD:SawingDesignGame/Assets/Scenes/Final Scenes/Main.unity
-=======
---- !u!1001 &2242662405267495363
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1658000063}
-    m_Modifications:
-    - target: {fileID: 3503726985015747394, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 710c766e36333c54aa126cbb9798e7f2, type: 3}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.76177186
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9906488
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.79999983
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.6338422
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.48571464
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.8428282
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6530338
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.6530337
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.2711954
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.27119553
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4104023196171248646, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -75.681
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 1507377817}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: laserRailX
-      value: 
-      objectReference: {fileID: 1507377816}
-    - target: {fileID: 4424882245362459338, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: laserRailZ
-      value: 
-      objectReference: {fileID: 1507377815}
-    - target: {fileID: 6803160789988147121, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: displayText
-      value: 
-      objectReference: {fileID: 707940769}
-    - target: {fileID: 8449773745345933984, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_Name
-      value: Button Console
-      objectReference: {fileID: 0}
-    - target: {fileID: 8449773745345933984, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947341087266912297, guid: 317169d1c29d430418ea9278b126488b, type: 3}
-      propertyPath: trashBeam
-      value: 
-      objectReference: {fileID: 926419385}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 317169d1c29d430418ea9278b126488b, type: 3}
->>>>>>> DylanBranch:SawingDesignGame/Assets/Scenes/Main.unity
 --- !u!1001 &5238704372520133306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4570,7 +4456,6 @@ PrefabInstance:
       value: Sci-fi-Panel
       objectReference: {fileID: 0}
     - target: {fileID: 3660572401446092236, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
-<<<<<<< HEAD:SawingDesignGame/Assets/Scenes/Final Scenes/Main.unity
       propertyPath: laser
       value: 
       objectReference: {fileID: 1507377817}
@@ -4582,11 +4467,6 @@ PrefabInstance:
       propertyPath: laserRailZ
       value: 
       objectReference: {fileID: 1507377815}
-=======
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
->>>>>>> DylanBranch:SawingDesignGame/Assets/Scenes/Main.unity
     - target: {fileID: 4242430486038338485, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.977
@@ -4627,7 +4507,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-<<<<<<< HEAD:SawingDesignGame/Assets/Scenes/Final Scenes/Main.unity
     - target: {fileID: 5894384463224381623, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
       propertyPath: displayText
       value: 
@@ -4636,18 +4515,9 @@ PrefabInstance:
       propertyPath: trashBeam
       value: 
       objectReference: {fileID: 926419385}
-=======
-    - target: {fileID: 8856049059531451814, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
->>>>>>> DylanBranch:SawingDesignGame/Assets/Scenes/Main.unity
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4242430486038338485, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1914413696}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
 --- !u!1001 &5393215579111688471
