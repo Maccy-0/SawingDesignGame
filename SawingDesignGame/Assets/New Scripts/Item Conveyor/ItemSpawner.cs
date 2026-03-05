@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     public GameObject[] earthObjects;
+    public GameObject spawnButton;
     public float conveyorSpeed;
     GameObject currentObject;   //The object which will spawn next
     int chosenPositionInArray;
@@ -16,16 +17,20 @@ public class ItemSpawner : MonoBehaviour
     void Start()
     {
         objectSpawned = false;
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        bool spawnActive = spawnButton.GetComponent<spawnerButton>().buttonOn;
+        if (spawnActive)
         {  //Change to a different input or automatic once last object despawned
-            //if (currentObject == null)
+           //if (currentObject == null)
            // {
-                chosenPositionInArray = Random.Range(0, earthObjects.Length+1);   //selects which index in the list of objects to choose
+                spawnButton.GetComponent<spawnerButton>().buttonOn = false;
+                chosenPositionInArray = Random.Range(0, earthObjects.Length);   //selects which index in the list of objects to choose
                 currentObject = earthObjects[chosenPositionInArray];    //selects the object that is in the chosen index as the one to spawn
                     AbductAnObject();
                 objectSpawned = true;
@@ -43,6 +48,8 @@ public class ItemSpawner : MonoBehaviour
             objectSpawned = false;
             playTimer = 0;
         }
+
+
 
     }
 
