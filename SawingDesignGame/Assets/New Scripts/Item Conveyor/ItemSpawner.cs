@@ -10,6 +10,8 @@ public class ItemSpawner : MonoBehaviour
     bool objectSpawned;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public ParticleSystem beamingParticles;
+    public AudioSource audioSource;
+    public AudioClip warpSound;
 
     void Start()
     {
@@ -47,8 +49,8 @@ public class ItemSpawner : MonoBehaviour
     public void AbductAnObject()
     {   
         beamingParticles.Play();
-        
-        Instantiate(currentObject, transform.position + Vector3.up * currentObject.transform.localScale.y/2 , Quaternion.identity); //spawns the prefab at the position of the spawn point
+        audioSource.Play();
+        Instantiate(currentObject, transform.position, Quaternion.identity); //spawns the prefab at the position of the spawn point
     }
 
 
