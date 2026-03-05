@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -462,6 +466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -588,6 +596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CouchFBX
       objectReference: {fileID: 0}
+    - target: {fileID: 7549099302251377057, guid: 11072a30d1729744c82dfbfe49d8bc6f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -649,6 +661,10 @@ PrefabInstance:
     - target: {fileID: 5688651004012888867, guid: 5514301f4b481114ea469cf7c815a78d, type: 3}
       propertyPath: m_Name
       value: sci_fi_commandpanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688651004012888867, guid: 5514301f4b481114ea469cf7c815a78d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -739,6 +755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_computerserverboxfbx (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5644780845497500794, guid: 29ba6587d7510d14897b7d9be86ca416, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -760,6 +780,10 @@ PrefabInstance:
     - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_Name
       value: sci_fi_smallbarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2961708535632769754, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_LocalScale.x
@@ -868,7 +892,7 @@ GameObject:
   - component: {fileID: 194757249}
   - component: {fileID: 194757251}
   - component: {fileID: 194757250}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,6 +1054,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1092,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1113,7 +1145,7 @@ GameObject:
   - component: {fileID: 247983233}
   - component: {fileID: 247983235}
   - component: {fileID: 247983234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1266,7 @@ GameObject:
   - component: {fileID: 252598232}
   - component: {fileID: 252598234}
   - component: {fileID: 252598233}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1387,7 @@ GameObject:
   - component: {fileID: 309281546}
   - component: {fileID: 309281548}
   - component: {fileID: 309281547}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1516,6 +1548,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1699,6 +1735,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallcontrolpanel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 748861690914324171, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045323865472221143, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1720,7 +1764,7 @@ GameObject:
   - component: {fileID: 389403903}
   - component: {fileID: 389403905}
   - component: {fileID: 389403904}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1841,7 +1885,7 @@ GameObject:
   - component: {fileID: 435609398}
   - component: {fileID: 435609400}
   - component: {fileID: 435609399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2140,6 +2184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_commandpanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5688651004012888867, guid: 5514301f4b481114ea469cf7c815a78d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2161,6 +2209,10 @@ PrefabInstance:
     - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_Name
       value: sci_fi_smallbarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2961708535632769754, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_LocalScale.x
@@ -2231,7 +2283,7 @@ GameObject:
   - component: {fileID: 509569208}
   - component: {fileID: 509569210}
   - component: {fileID: 509569209}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2352,7 +2404,7 @@ GameObject:
   - component: {fileID: 510924660}
   - component: {fileID: 510924662}
   - component: {fileID: 510924661}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2472,7 +2524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514791068}
   - component: {fileID: 514791069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Reflection Probe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2538,7 +2590,7 @@ GameObject:
   - component: {fileID: 516708755}
   - component: {fileID: 516708757}
   - component: {fileID: 516708756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2907,7 +2959,7 @@ GameObject:
   - component: {fileID: 548289409}
   - component: {fileID: 548289411}
   - component: {fileID: 548289410}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,6 +3121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CouchFBX
       objectReference: {fileID: 0}
+    - target: {fileID: 7549099302251377057, guid: 11072a30d1729744c82dfbfe49d8bc6f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3130,6 +3186,10 @@ PrefabInstance:
     - target: {fileID: 1879921065920866257, guid: 87ab9140037ccf84391678a1188688b9, type: 3}
       propertyPath: m_Name
       value: sci_fi_Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879921065920866257, guid: 87ab9140037ccf84391678a1188688b9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3301,6 +3361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_computerserverboxfbx
       objectReference: {fileID: 0}
+    - target: {fileID: 5644780845497500794, guid: 29ba6587d7510d14897b7d9be86ca416, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3321,7 +3385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650835989}
   - component: {fileID: 650835990}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Reflection Probe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3386,7 +3450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 654619541}
   - component: {fileID: 654619542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Reflection Probe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3452,6 +3516,10 @@ PrefabInstance:
     - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_Name
       value: sci_fi_smallbarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2961708535632769754, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_LocalScale.x
@@ -3562,6 +3630,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3790,7 +3862,7 @@ GameObject:
   - component: {fileID: 758977832}
   - component: {fileID: 758977834}
   - component: {fileID: 758977833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3952,6 +4024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4014,6 +4090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4035,7 +4115,7 @@ GameObject:
   - component: {fileID: 776922333}
   - component: {fileID: 776922335}
   - component: {fileID: 776922334}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Conveyor Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4439,6 +4519,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallboxwires
       objectReference: {fileID: 0}
+    - target: {fileID: 5650915808308542193, guid: 33b553fa3b72b80489cbacb270878180, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316006200063312353, guid: 33b553fa3b72b80489cbacb270878180, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4501,6 +4589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4522,7 +4614,7 @@ GameObject:
   - component: {fileID: 865218916}
   - component: {fileID: 865218918}
   - component: {fileID: 865218917}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4683,6 +4775,10 @@ PrefabInstance:
     - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
       propertyPath: m_Name
       value: sci_fi_Chair (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4971,7 +5067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882376048}
   - component: {fileID: 882376049}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light Probe Group (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5280,6 +5376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Chair (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5507,6 +5607,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallcontrolpanel
       objectReference: {fileID: 0}
+    - target: {fileID: 748861690914324171, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045323865472221143, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5528,7 +5636,7 @@ GameObject:
   - component: {fileID: 974873588}
   - component: {fileID: 974873590}
   - component: {fileID: 974873589}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5690,6 +5798,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallcontrolpanel
       objectReference: {fileID: 0}
+    - target: {fileID: 748861690914324171, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045323865472221143, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5752,6 +5868,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5773,6 +5893,10 @@ PrefabInstance:
     - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_Name
       value: sci_fi_smallbarrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2961708535632769754, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_LocalScale.x
@@ -5843,7 +5967,7 @@ GameObject:
   - component: {fileID: 1014459991}
   - component: {fileID: 1014459993}
   - component: {fileID: 1014459992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6314,6 +6438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6376,6 +6504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6397,7 +6529,7 @@ GameObject:
   - component: {fileID: 1095241969}
   - component: {fileID: 1095241971}
   - component: {fileID: 1095241970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6571,6 +6703,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallcontrolpanel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 748861690914324171, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045323865472221143, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6633,6 +6773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6694,6 +6838,10 @@ PrefabInstance:
     - target: {fileID: 5644780845497500794, guid: 29ba6587d7510d14897b7d9be86ca416, type: 3}
       propertyPath: m_Name
       value: sci_fi_computerserverboxfbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644780845497500794, guid: 29ba6587d7510d14897b7d9be86ca416, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7151,6 +7299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7213,6 +7365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Chair (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7234,7 +7390,7 @@ GameObject:
   - component: {fileID: 1259734794}
   - component: {fileID: 1259734796}
   - component: {fileID: 1259734795}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7353,7 +7509,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1270924758}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7467,6 +7623,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallcontrolpanel
       objectReference: {fileID: 0}
+    - target: {fileID: 748861690914324171, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045323865472221143, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7528,6 +7692,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7591,6 +7759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7652,6 +7824,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7903,6 +8079,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallcontrolpanel
       objectReference: {fileID: 0}
+    - target: {fileID: 748861690914324171, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7045323865472221143, guid: a2fef2dad5497a74ea493e54704c56c2, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8103,6 +8287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8164,6 +8352,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8227,6 +8419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8248,6 +8444,10 @@ PrefabInstance:
     - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_Name
       value: sci_fi_smallbarrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2961708535632769754, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_LocalScale.x
@@ -8318,7 +8518,7 @@ GameObject:
   - component: {fileID: 1502971898}
   - component: {fileID: 1502971900}
   - component: {fileID: 1502971899}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8566,6 +8766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Chair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8628,6 +8832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8649,7 +8857,7 @@ GameObject:
   - component: {fileID: 1600437976}
   - component: {fileID: 1600437978}
   - component: {fileID: 1600437977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8999,7 +9207,7 @@ GameObject:
   - component: {fileID: 1695159633}
   - component: {fileID: 1695159635}
   - component: {fileID: 1695159634}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9120,7 +9328,7 @@ GameObject:
   - component: {fileID: 1699089959}
   - component: {fileID: 1699089961}
   - component: {fileID: 1699089960}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9282,6 +9490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_computerserverboxfbx
       objectReference: {fileID: 0}
+    - target: {fileID: 5644780845497500794, guid: 29ba6587d7510d14897b7d9be86ca416, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9344,6 +9556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_computerserverboxfbx (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5644780845497500794, guid: 29ba6587d7510d14897b7d9be86ca416, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9365,7 +9581,7 @@ GameObject:
   - component: {fileID: 1745343894}
   - component: {fileID: 1745343896}
   - component: {fileID: 1745343895}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9592,6 +9808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Table
       objectReference: {fileID: 0}
+    - target: {fileID: 1879921065920866257, guid: 87ab9140037ccf84391678a1188688b9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9654,6 +9874,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_smallboxwires
       objectReference: {fileID: 0}
+    - target: {fileID: 5650915808308542193, guid: 33b553fa3b72b80489cbacb270878180, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316006200063312353, guid: 33b553fa3b72b80489cbacb270878180, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9715,6 +9943,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10126,6 +10358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_Chair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2063694158917675875, guid: f8f643cb399cc4e40ac60d6fa6d361fa, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10384,7 +10620,7 @@ GameObject:
   - component: {fileID: 1930080865}
   - component: {fileID: 1930080867}
   - component: {fileID: 1930080866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10545,6 +10781,10 @@ PrefabInstance:
     - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
       propertyPath: m_Name
       value: sci_fi_bigbarrel (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10736,6 +10976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10807,6 +11051,10 @@ PrefabInstance:
     - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_Name
       value: sci_fi_smallbarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472980408213596256, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2961708535632769754, guid: b80aa5567e45b0c468ac917f9a51ebbc, type: 3}
       propertyPath: m_LocalScale.x
@@ -10918,6 +11166,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sci_fi_bigbarrel
       objectReference: {fileID: 0}
+    - target: {fileID: 612915497504282474, guid: dab1c84fff9fd3c44a6872261d3ea851, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10939,7 +11191,7 @@ GameObject:
   - component: {fileID: 2133505818}
   - component: {fileID: 2133505820}
   - component: {fileID: 2133505819}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WorkLight (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11058,7 +11310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2139239996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
