@@ -5101,6 +5101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earthObjects:
   - {fileID: 3868299852660360381, guid: 12418d0b9c781a046a1899a82a8e5162, type: 3}
+  - {fileID: 8624544780078465175, guid: f04af0f4e2c8872468a619de28217004, type: 3}
+  spawnButton: {fileID: 0}
   conveyorSpeed: 277.9
   beamingParticles: {fileID: 6703155989487280378}
   audioSource: {fileID: 5650018002378095976}
