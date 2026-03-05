@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46a3a0f843cf31648a1f7704ea3d6a77
+guid: 155ba7fa53c38864b870792cedbfc688
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,12 +97,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AbdDestLoading_0
+      name: AbdDestButtons_0
       rect:
         serializedVersion: 2
-        x: 420
+        x: 349
         y: 366
-        width: 905
+        width: 1050
         height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f5bed926a63dba4f982b478f01e46ea
-      internalID: 1807825973
+      spriteID: 90f2d10b290848f4bb09906cedc72a63
+      internalID: 954576862
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 407c70db13990b94e8c18f36f46cabf3
+    spriteID: a4c27452bcd0c6444b77cf1e7d87a1ed
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AbdDestLoading_0: 1807825973
+      AbdDestButtons_0: 954576862
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
