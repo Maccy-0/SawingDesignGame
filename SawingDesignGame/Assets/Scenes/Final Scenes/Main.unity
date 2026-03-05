@@ -427,7 +427,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2c74ab869dc43374087542649d5b02d6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7938,7 +7938,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2c74ab869dc43374087542649d5b02d6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11974,6 +11974,14 @@ PrefabInstance:
       propertyPath: trashBeam
       value: 
       objectReference: {fileID: 926419385}
+    - target: {fileID: 8327145340000331567, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c74ab869dc43374087542649d5b02d6, type: 3}
+    - target: {fileID: 8786530063478213274, guid: 1ee0f1ea79c88c9439e076113d4a6016, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c74ab869dc43374087542649d5b02d6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
