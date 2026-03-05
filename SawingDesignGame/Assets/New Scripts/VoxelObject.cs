@@ -5,9 +5,9 @@ using System.Collections;
 
 public class VoxelObject : MonoBehaviour
 {
-    int sizeX = 32;
-    int sizeY = 32;
-    int sizeZ = 32;
+    int sizeX = 64;
+    int sizeY = 64;
+    int sizeZ = 64;
 
     float voxelSize = 1 / 64f;
     float trueScale;
@@ -477,6 +477,7 @@ public class VoxelObject : MonoBehaviour
         uvs.Add(new Vector2(v1.x * tiling, v1.z * tiling));
         uvs.Add(new Vector2(v2.x * tiling, v2.z * tiling));
         uvs.Add(new Vector2(v3.x * tiling, v3.z * tiling));
+        
 
     }
 
@@ -740,7 +741,8 @@ public class VoxelObject : MonoBehaviour
 
         if (solidVoxelCount <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            RebuildMesh();
             return;
         }
         Debug.Log(solidVoxelCount);
