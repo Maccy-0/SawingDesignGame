@@ -7,7 +7,8 @@ public class ObjectPickup : MonoBehaviour
     public GameObject pickupObj;
     public GameObject pickupLocation;
     public GameObject controlConsole;
-    public TextMeshProUGUI pickupText;
+    public GameObject pickupText;
+    public TextMeshProUGUI objectName;
     private Rigidbody pickupRigidbody;
     private bool isHolding;
     private Transform pickupTransform;
@@ -17,7 +18,7 @@ public class ObjectPickup : MonoBehaviour
     {
         //pickuplocationRigidbody = pickupLocation.GetComponent<Rigidbody>();
         isHolding = false;
-        pickupText.text = "";
+        pickupText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class ObjectPickup : MonoBehaviour
     {
         if (isHolding)
         {
+            pickupText.SetActive(false);
             pickupTransform.position = Vector3.MoveTowards(pickupTransform.position, pickupLocation.transform.position, speed * Time.deltaTime);
         }
 
@@ -36,6 +38,7 @@ public class ObjectPickup : MonoBehaviour
             pickupRigidbody.freezeRotation = true;
         } else if (Input.GetKeyDown(KeyCode.E) && isHolding) //Drop Object
         {
+            pickupText.SetActive(true);
             pickupObj.transform.parent = null;
             isHolding = false;
             pickupRigidbody.useGravity = true;
@@ -58,7 +61,8 @@ public class ObjectPickup : MonoBehaviour
             
             if (pickupObj.name != pickupLocation.transform.parent.transform.parent.name && pickupObj.transform.parent == null)
             {
-                pickupText.text = "Press [E] to pick up " + pickupObj.name;
+                pickupText.SetActive(true);
+                objectName.text = pickupObj.name;
                 pickupRigidbody = pickupObj.GetComponent<Rigidbody>();
                 pickupTransform = pickupObj.transform;
                 
@@ -76,7 +80,7 @@ public class ObjectPickup : MonoBehaviour
             if (other.gameObject.name == pickupObj.name)
             {
                 pickupObj = null;
-                pickupText.text = "";
+                pickupText.SetActive(false);
             }
             
         }
