@@ -265,9 +265,10 @@ public class VoxelObject : MonoBehaviour
     }
 
     void GreedyMesh(
-    List<Vector3> verts,
+        List<Vector3> verts,
     List<int> tris,
-    List<Vector3> norms)
+    List<Vector3> norms,
+    List<Vector2> uvs)
     {
         int[] dims = { sizeX, sizeY, sizeZ };
         bool[] mask = new bool[sizeX * sizeY];
@@ -373,8 +374,10 @@ public class VoxelObject : MonoBehaviour
                             verts,
                             tris,
                             norms,
+                            uvs,
                             faceDir[n] < 0
-                        );
+                            );
+
 
 
                         for (int l = 0; l < h; l++)
@@ -401,14 +404,20 @@ public class VoxelObject : MonoBehaviour
         var vertices = new List<Vector3>();
         var triangles = new List<int>();
         var normals = new List<Vector3>();
+        var uvs = new List<Vector2>();
 
-        GreedyMesh(vertices, triangles, normals);
+
+        GreedyMesh(vertices, triangles, normals, uvs);
 
         objectMesh.Clear();
         objectMesh.SetVertices(vertices);
         objectMesh.SetTriangles(triangles, 0);
-        objectMesh.SetNormals(normals);
+        objectMesh.SetUVs(0, uvs);
+
+        objectMesh.RecalculateNormals();
+        objectMesh.RecalculateTangents();
         objectMesh.RecalculateBounds();
+
 
         objectMeshCollider.sharedMesh = null;
         objectMeshCollider.sharedMesh = objectMesh;
@@ -416,22 +425,28 @@ public class VoxelObject : MonoBehaviour
     }
 
     void AddQuad(
-    Vector3 pos,
-    Vector3 du,
-    Vector3 dv,
-    Vector3 normal,
-    List<Vector3> verts,
-    List<int> tris,
-    List<Vector3> norms,
-    bool flip)
-    {
+        Vector3 pos,
+        Vector3 du,
+        Vector3 dv,
+        Vector3 normal,
+        List<Vector3> verts,
+        List<int> tris,
+        List<Vector3> norms,
+        List<Vector2> uvs,
+        bool flip)
 
+    {
         int start = verts.Count;
 
-        verts.Add(pos);
-        verts.Add(pos + dv);
-        verts.Add(pos + du + dv);
-        verts.Add(pos + du);
+        Vector3 v0 = pos;
+        Vector3 v1 = pos + dv;
+        Vector3 v2 = pos + du + dv;
+        Vector3 v3 = pos + du;
+
+        verts.Add(v0);
+        verts.Add(v1);
+        verts.Add(v2);
+        verts.Add(v3);
 
         if (flip)
         {
@@ -450,13 +465,55 @@ public class VoxelObject : MonoBehaviour
             tris.Add(start + 0);
             tris.Add(start + 3);
             tris.Add(start + 2);
-
         }
-
 
         for (int i = 0; i < 4; i++)
             norms.Add(normal);
+
+        // UV projection
+        float tiling = 32f;
+
+        uvs.Add(new Vector2(v0.x * tiling, v0.z * tiling));
+        uvs.Add(new Vector2(v1.x * tiling, v1.z * tiling));
+        uvs.Add(new Vector2(v2.x * tiling, v2.z * tiling));
+        uvs.Add(new Vector2(v3.x * tiling, v3.z * tiling));
+
     }
+
+
+
+    /*
+    int start = verts.Count;
+
+    verts.Add(pos);
+    verts.Add(pos + dv);
+    verts.Add(pos + du + dv);
+    verts.Add(pos + du);
+
+    if (flip)
+    {
+        tris.Add(start + 0);
+        tris.Add(start + 1);
+        tris.Add(start + 2);
+        tris.Add(start + 0);
+        tris.Add(start + 2);
+        tris.Add(start + 3);
+    }
+    else
+    {
+        tris.Add(start + 0);
+        tris.Add(start + 2);
+        tris.Add(start + 1);
+        tris.Add(start + 0);
+        tris.Add(start + 3);
+        tris.Add(start + 2);
+
+    }
+
+
+    for (int i = 0; i < 4; i++)
+        norms.Add(normal);
+    */
 
 
 
@@ -683,8 +740,7 @@ public class VoxelObject : MonoBehaviour
 
         if (solidVoxelCount <= 0)
         {
-            //Destroy(gameObject);
-            RebuildMesh();
+            Destroy(gameObject);
             return;
         }
         Debug.Log(solidVoxelCount);
