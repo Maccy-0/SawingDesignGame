@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class VoxelObject : MonoBehaviour
 {
-    public int sizeX = 32;
-    public int sizeY = 32;
-    public int sizeZ = 32;
+    int sizeX = 32;
+    int sizeY = 32;
+    int sizeZ = 32;
 
-    public float voxelSize = 0.1f;
+    float voxelSize = 1 / 32f;
+    float trueScale;
 
     public bool[,,] voxels;
 
@@ -16,23 +17,51 @@ public class VoxelObject : MonoBehaviour
     MeshFilter objectMeshFilter;
     MeshCollider objectMeshCollider;
 
+    Mesh sourceMesh;
+    MeshCollider voxelizeCollider;
+
+
     Vector3 voxelOriginOffset;
     int solidVoxelCount;
 
+    static readonly Vector3Int[] Neighbors =
+        {
+    new Vector3Int( 1, 0, 0),
+    new Vector3Int(-1, 0, 0),
+    new Vector3Int( 0, 1, 0),
+    new Vector3Int( 0,-1, 0),
+    new Vector3Int( 0, 0, 1),
+    new Vector3Int( 0, 0,-1),
+    };
+
     void Awake()
     {
+        objectMeshFilter = GetComponent<MeshFilter>();
+
+        Debug.Log(objectMeshFilter.mesh.bounds.extents.x);
+        trueScale = 2*Mathf.Max(objectMeshFilter.mesh.bounds.extents.x, objectMeshFilter.mesh.bounds.extents.y, objectMeshFilter.mesh.bounds.extents.z);
+        voxelSize = voxelSize * trueScale;
+        //trueScale = this.transform.localScale;
+        //this.transform.localScale = Vector3.one;
+
         voxels = new bool[sizeX, sizeY, sizeZ];
-        
+
         voxelOriginOffset = new Vector3(
             sizeX * voxelSize * 0.5f,
             sizeY * voxelSize * 0.5f,
             sizeZ * voxelSize * 0.5f
-            );
+        );
 
+        SetupVoxelizer();
+        VoxelizeMesh();
+        CleanupVoxelizer();
 
+        solidVoxelCount = sizeX * sizeY * sizeZ;
 
+        //this.transform.localScale = trueScale;
 
         // Fill solid
+        /*
         for (int x = 0; x < sizeX; x++)
         {
             for (int y = 0; y < sizeY; y++)
@@ -43,8 +72,7 @@ public class VoxelObject : MonoBehaviour
                 }
             }
         }
-
-        solidVoxelCount = sizeX * sizeY * sizeZ;
+        */
 
         //Circle
         //Vector3 center = new Vector3(
@@ -66,6 +94,12 @@ public class VoxelObject : MonoBehaviour
 
     void Start()
     {
+        InitRuntimeMesh();
+        RebuildMesh();
+    }
+
+    void InitRuntimeMesh()
+    {
         objectMesh = new Mesh();
         objectMesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
 
@@ -73,10 +107,103 @@ public class VoxelObject : MonoBehaviour
         objectMeshCollider = GetComponent<MeshCollider>();
 
         objectMeshFilter.mesh = objectMesh;
-
-        RebuildMesh();
     }
 
+    void SetupVoxelizer()
+    {
+        var mf = GetComponent<MeshFilter>();
+        sourceMesh = mf.sharedMesh;
+
+        voxelizeCollider = gameObject.AddComponent<MeshCollider>();
+        voxelizeCollider.sharedMesh = sourceMesh;
+        voxelizeCollider.convex = false; // MUST be false
+
+        Debug.Log("Voxelizer collider enabled: " + voxelizeCollider.enabled);
+        Debug.Log("Mesh bounds: " + voxelizeCollider.bounds);
+
+    }
+
+    void VoxelizeMesh()
+    {
+        Vector3 testOrigin = voxelizeCollider.bounds.min - Vector3.right * 0.1f;
+
+        if (Physics.Raycast(
+                testOrigin,
+                Vector3.right,
+                out RaycastHit hit,
+                10f))
+        {
+            Debug.Log("TEST HIT: " + hit.collider.name);
+        }
+        else
+        {
+            Debug.Log("TEST MISS");
+        }
+
+
+
+        solidVoxelCount = 0;
+
+        //Vector3 rayDir = Vector3.right; // fixed direction
+
+        float maxRayDist =
+            Mathf.Max(sizeX, sizeY, sizeZ) * voxelSize * 2f;
+        Debug.Log(maxRayDist);
+
+        for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
+                for (int z = 0; z < sizeZ; z++)
+                {
+                    Vector3 rayDir1 = new Vector3(2,0,0);
+                    Vector3 rayDir2 = new Vector3(-2, 0, 0);
+                    //Vector3 rayDir3 = new Vector3(0, 0, 2);
+
+
+                    Vector3 worldPos = VoxelToWorld(x, y, z);
+
+                    bool insideX = RayParity(worldPos, rayDir1);
+                    bool insideY = RayParity(worldPos, rayDir2);
+                    //bool insideZ = RayParity(worldPos, rayDir3);
+
+                    bool inside = (insideX ? 1 : 0)
+                                + (insideY ? 1 : 0) >= 2;
+
+                    voxels[x, y, z] = inside;
+
+                    if (inside) solidVoxelCount++;
+
+                    Debug.Log("Hits: " + solidVoxelCount);
+
+                }
+    }
+
+    void CleanupVoxelizer()
+    {
+        Destroy(voxelizeCollider);
+        //Destroy(GetComponent<MeshRenderer>());
+        //Destroy(GetComponent<MeshFilter>());
+    }
+
+    bool RayParity(Vector3 worldPos, Vector3 dir)
+    {
+        float maxDist = voxelizeCollider.bounds.size.magnitude * 2f;
+        Vector3 start = worldPos - dir * maxDist * 0.5f;
+
+        RaycastHit[] hits = Physics.RaycastAll(
+            start,
+            dir,
+            maxDist,
+            ~0,
+            QueryTriggerInteraction.Ignore
+        );
+
+        int count = 0;
+        foreach (var hit in hits)
+            if (hit.collider == voxelizeCollider)
+                count++;
+
+        return (count & 1) == 1;
+    }
 
     Vector3 VoxelToWorld(int x, int y, int z)
     {
@@ -209,8 +336,8 @@ public class VoxelObject : MonoBehaviour
                         Vector3 du = Vector3.zero;
                         Vector3 dv = Vector3.zero;
 
-                        du[u] = (w-0) * voxelSize;
-                        dv[v] = (h-0) * voxelSize;
+                        du[u] = (w - 0) * voxelSize;
+                        dv[v] = (h - 0) * voxelSize;
 
                         Vector3 normal = axis[d] * faceDir[n];
                         Vector3 quadPos = basePos;
@@ -459,6 +586,54 @@ public class VoxelObject : MonoBehaviour
             norms.Add(normal);
     }
 
+    List<List<Vector3Int>> FindVoxelIslands()
+    {
+        bool[,,] visited = new bool[sizeX, sizeY, sizeZ];
+        var islands = new List<List<Vector3Int>>();
+
+        for (int x = 0; x < sizeX; x++)
+            for (int y = 0; y < sizeY; y++)
+                for (int z = 0; z < sizeZ; z++)
+                {
+                    if (!voxels[x, y, z] || visited[x, y, z])
+                        continue;
+
+                    var island = new List<Vector3Int>();
+                    var queue = new Queue<Vector3Int>();
+
+                    queue.Enqueue(new Vector3Int(x, y, z));
+                    visited[x, y, z] = true;
+
+                    while (queue.Count > 0)
+                    {
+                        var v = queue.Dequeue();
+                        island.Add(v);
+
+                        foreach (var d in Neighbors)
+                        {
+                            int nx = v.x + d.x;
+                            int ny = v.y + d.y;
+                            int nz = v.z + d.z;
+
+                            if (nx < 0 || nx >= sizeX ||
+                                ny < 0 || ny >= sizeY ||
+                                nz < 0 || nz >= sizeZ)
+                                continue;
+
+                            if (!voxels[nx, ny, nz] || visited[nx, ny, nz])
+                                continue;
+
+                            visited[nx, ny, nz] = true;
+                            queue.Enqueue(new Vector3Int(nx, ny, nz));
+                        }
+                    }
+
+                    islands.Add(island);
+                }
+
+        return islands;
+    }
+
     public int removedThisFrame;
 
     public void Carve(Bounds laserBounds)
@@ -498,11 +673,87 @@ public class VoxelObject : MonoBehaviour
         Debug.Log(solidVoxelCount);
 
         if (removedThisFrame > 0)
+        {
+            TrySplit();
             RebuildMesh();
+        }
 
         //RebuildMesh();
     }
 
+    void TrySplit()
+    {
+        if (removedThisFrame == 0)
+            return;
+
+        var islands = FindVoxelIslands();
+
+        if (islands.Count <= 1)
+            return;
+
+        // Sort largest first
+        islands.Sort((a, b) => b.Count.CompareTo(a.Count));
+
+        // Keep the largest island
+        var mainIsland = islands[0];
+
+        // Remove all other islands from THIS object
+        for (int i = 1; i < islands.Count; i++)
+        {
+            SpawnNewChunk(islands[i]);
+        }
+
+        // Clear everything except main island
+        System.Array.Clear(voxels, 0, voxels.Length);
+        solidVoxelCount = 0;
+
+        foreach (var v in mainIsland)
+        {
+            voxels[v.x, v.y, v.z] = true;
+            solidVoxelCount++;
+        }
+    }
+
+    void SpawnNewChunk(List<Vector3Int> island)
+    {
+        GameObject go = new GameObject("Voxel Chunk");
+        go.transform.position = transform.position;
+        go.transform.rotation = transform.rotation;
+        go.transform.localScale = transform.localScale;
+
+        var mf = go.AddComponent<MeshFilter>();
+        var mr = go.AddComponent<MeshRenderer>();
+        var mc = go.AddComponent<MeshCollider>();
+        var vo = go.AddComponent<VoxelObject>();
+
+        vo.objectMeshFilter = mf;
+        vo.objectMeshCollider = mc;
+        mc.convex = true;
+
+        Rigidbody original = GetComponent<Rigidbody>();
+
+        Rigidbody rb = go.AddComponent<Rigidbody>();
+        rb.mass = original.mass;
+
+        mr.sharedMaterial = GetComponent<MeshRenderer>().sharedMaterial;
+
+        // Copy voxel grid
+        vo.sizeX = sizeX;
+        vo.sizeY = sizeY;
+        vo.sizeZ = sizeZ;
+        vo.voxelSize = voxelSize;
+        vo.voxelOriginOffset = voxelOriginOffset;
+
+        vo.voxels = new bool[sizeX, sizeY, sizeZ];
+
+        foreach (var v in island)
+            vo.voxels[v.x, v.y, v.z] = true;
+
+        vo.solidVoxelCount = island.Count;
+
+        vo.InitRuntimeMesh();
+        vo.RebuildMesh();
+    }
 
 }
 

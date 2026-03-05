@@ -4,7 +4,7 @@ public class BigLazer : MonoBehaviour
 {
     CapsuleCollider laserCollider;
 
-    Bounds laserBounds;
+    public Bounds laserBounds;
 
     void Awake()
     {
