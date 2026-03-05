@@ -5,11 +5,11 @@ using System.Collections;
 
 public class VoxelObject : MonoBehaviour
 {
-    int sizeX = 32;
-    int sizeY = 32;
-    int sizeZ = 32;
+    int sizeX = 64;
+    int sizeY = 64;
+    int sizeZ = 64;
 
-    float voxelSize = 1 / 32f;
+    float voxelSize = 1 / 64f;
     float trueScale;
 
     public bool[,,] voxels;
@@ -412,9 +412,12 @@ public class VoxelObject : MonoBehaviour
         objectMesh.Clear();
         objectMesh.SetVertices(vertices);
         objectMesh.SetTriangles(triangles, 0);
-        objectMesh.SetNormals(normals);
         objectMesh.SetUVs(0, uvs);
+
+        objectMesh.RecalculateNormals();
+        objectMesh.RecalculateTangents();
         objectMesh.RecalculateBounds();
+
 
         objectMeshCollider.sharedMesh = null;
         objectMeshCollider.sharedMesh = objectMesh;
@@ -468,10 +471,13 @@ public class VoxelObject : MonoBehaviour
             norms.Add(normal);
 
         // UV projection
-        uvs.Add(new Vector2(v0.x, v0.z));
-        uvs.Add(new Vector2(v1.x, v1.z));
-        uvs.Add(new Vector2(v2.x, v2.z));
-        uvs.Add(new Vector2(v3.x, v3.z));
+        float tiling = 32f;
+
+        uvs.Add(new Vector2(v0.x * tiling, v0.z * tiling));
+        uvs.Add(new Vector2(v1.x * tiling, v1.z * tiling));
+        uvs.Add(new Vector2(v2.x * tiling, v2.z * tiling));
+        uvs.Add(new Vector2(v3.x * tiling, v3.z * tiling));
+
     }
 
 
@@ -511,7 +517,7 @@ public class VoxelObject : MonoBehaviour
 
 
 
-void OldRebuildMesh()
+    void OldRebuildMesh()
     {
         var vertices = new List<Vector3>();
         var triangles = new List<int>();
@@ -734,8 +740,7 @@ void OldRebuildMesh()
 
         if (solidVoxelCount <= 0)
         {
-            //Destroy(gameObject);
-            RebuildMesh();
+            Destroy(gameObject);
             return;
         }
         Debug.Log(solidVoxelCount);
