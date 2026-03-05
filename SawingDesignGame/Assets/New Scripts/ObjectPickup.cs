@@ -54,10 +54,6 @@ public class ObjectPickup : MonoBehaviour
         if (!isHolding) //Update the current selected object
         {
             pickupObj = other.gameObject;
-            if(pickupObj.transform.parent != null)
-            {
-                Debug.Log(pickupObj.transform.parent.name);
-            }
             
             if (pickupObj.name != pickupLocation.transform.parent.transform.parent.name && pickupObj.transform.parent == null)
             {

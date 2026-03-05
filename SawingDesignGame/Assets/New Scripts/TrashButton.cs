@@ -11,16 +11,20 @@ public class TrashButton : MonoBehaviour
     public float distance;
     public Vector3 direction;
     private Vector3 startingPos;
+    private AudioSource soundSource;
+    public AudioClip soundEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Start()
     {
         startingPos = trashBeam.transform.position;
+        soundSource = GetComponent<AudioSource>();
     }
     void Update()
     {
         if (buttonActive && !buttonOn && Input.GetKeyDown(KeyCode.E))
         {
+            soundSource.PlayOneShot(soundEffect);
             buttonOn = true;
             distance = 0;
             GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.red);

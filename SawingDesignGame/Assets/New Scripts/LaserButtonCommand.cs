@@ -6,10 +6,12 @@ public class LaserButtonCommand : MonoBehaviour
     public Vector3 newDirection;
     public bool buttonOn;
     public bool buttonActive;
+    private AudioSource soundSource;
+    public AudioClip soundEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        soundSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -17,7 +19,9 @@ public class LaserButtonCommand : MonoBehaviour
     {
         if (buttonActive && !buttonOn && Input.GetKeyDown(KeyCode.E))
         {
-            buttonOn = true;
+            soundSource.PlayOneShot(soundEffect);
+            buttonOn = true;   
+            Debug.Log(soundEffect.name);
             this.GetComponentInParent<MoveObjectScript>().activeButton = this.transform.name;
         } else if (buttonActive && buttonOn && Input.GetKeyDown(KeyCode.E))
         {
