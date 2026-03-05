@@ -48,7 +48,7 @@ public class ItemSpawner : MonoBehaviour
     {   
         beamingParticles.Play();
         
-        Instantiate(currentObject, transform.position, Quaternion.identity); //spawns the prefab at the position of the spawn point
+        Instantiate(currentObject, transform.position + Vector3.up * currentObject.transform.localScale.y/2 , Quaternion.identity); //spawns the prefab at the position of the spawn point
     }
 
 
