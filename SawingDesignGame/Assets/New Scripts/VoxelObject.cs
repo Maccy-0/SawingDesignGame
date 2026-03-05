@@ -667,7 +667,8 @@ public class VoxelObject : MonoBehaviour
 
         if (solidVoxelCount <= 0)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            RebuildMesh();
             return;
         }
         Debug.Log(solidVoxelCount);
