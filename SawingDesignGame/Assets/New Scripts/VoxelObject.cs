@@ -733,7 +733,7 @@ public class VoxelObject : MonoBehaviour
 
     void SpawnNewChunk(List<Vector3Int> island)
     {
-        GameObject go = new GameObject("Voxel Chunk");
+        GameObject go = new GameObject(gameObject.name + " Chunk");
         go.transform.position = transform.position;
         go.transform.rotation = transform.rotation;
         go.transform.localScale = transform.localScale;
