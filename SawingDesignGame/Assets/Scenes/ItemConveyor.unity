@@ -377,6 +377,63 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1001 &1719291636787130579
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26320267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.7413416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.5455503
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514843892521770405, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920220927156428185, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
+      propertyPath: m_Name
+      value: Ambient Sound Speaker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 821a236e4796c5c4a9ef5627fcdee880, type: 3}
 --- !u!1001 &1900969380100440675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -441,3 +498,4 @@ SceneRoots:
   - {fileID: 1377212300}
   - {fileID: 1900969380100440675}
   - {fileID: 667194959}
+  - {fileID: 1719291636787130579}
