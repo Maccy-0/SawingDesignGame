@@ -56,7 +56,7 @@ public class ItemSpawner : MonoBehaviour
     {   
         beamingParticles.Play();
         audioSource.Play();
-        GameObject cut = Instantiate(currentObject, transform.position, Quaternion.identity); //spawns the prefab at the position of the spawn point
+        GameObject cut = Instantiate(currentObject, transform.position + currentObject.transform.localScale.y * Vector3.up / 2, Quaternion.identity); //spawns the prefab at the position of the spawn point
         cut.name = currentObject.name;
     }
 
