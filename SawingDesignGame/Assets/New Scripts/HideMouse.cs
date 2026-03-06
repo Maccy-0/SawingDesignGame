@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class LoadingScreen : MonoBehaviour
+public class HideMouse : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.visible = false;
+        Screen.SetResolution(1920, 1080, true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
     }
 }
