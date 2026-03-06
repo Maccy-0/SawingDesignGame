@@ -23,6 +23,9 @@ public class VoxelObject : MonoBehaviour
 
     Rigidbody objectRB;
 
+    MeshCollider collide;
+    Bounds bounds;
+
     Vector3 voxelOriginOffset;
     int solidVoxelCount;
 
@@ -51,10 +54,20 @@ public class VoxelObject : MonoBehaviour
 
         voxels = new bool[sizeX, sizeY, sizeZ];
 
+        //voxelOriginOffset = new Vector3(
+        //    sizeX * voxelSize * 0.5f,
+        //    sizeY * voxelSize * 0.5f,
+        //    sizeZ * voxelSize * 0.5f
+        //);
+
+        collide = GetComponent<MeshCollider>();
+
+        bounds = collide.bounds;
+
         voxelOriginOffset = new Vector3(
-            sizeX * voxelSize * 0.5f,
-            sizeY * voxelSize * 0.5f,
-            sizeZ * voxelSize * 0.5f
+            bounds.size.x * 0.5f,
+            bounds.size.y * 0.5f,
+            bounds.size.z * 0.5f
         );
 
         SetupVoxelizer();
@@ -785,6 +798,16 @@ public class VoxelObject : MonoBehaviour
             voxels[v.x, v.y, v.z] = true;
             solidVoxelCount++;
         }
+
+        collide = GetComponent<MeshCollider>();
+
+        bounds = collide.bounds;
+
+        voxelOriginOffset = new Vector3(
+            bounds.size.x * 0.5f,
+            bounds.size.y * 0.5f,
+            bounds.size.z * 0.5f
+        );
     }
 
     void SpawnNewChunk(List<Vector3Int> island)
