@@ -30,10 +30,8 @@ public class ChangeScene : MonoBehaviour
         while (delay < maxDelay)
         {
             delay += Time.deltaTime;
-            Debug.Log(delay);
             yield return null;
         }
-        Debug.Log("done playing");
         SceneManager.LoadScene(SceneNumber);
     }
 }

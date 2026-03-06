@@ -44,7 +44,6 @@ public class VoxelObject : MonoBehaviour
         objectRB.useGravity = false;
         objectRB.isKinematic = true;
 
-        Debug.Log(objectMeshFilter.mesh.bounds.extents.x);
         trueScale = 4*Mathf.Max(objectMeshFilter.mesh.bounds.extents.x, objectMeshFilter.mesh.bounds.extents.y, objectMeshFilter.mesh.bounds.extents.z);
         voxelSize = voxelSize * trueScale;
         //trueScale = this.transform.localScale;
@@ -745,7 +744,6 @@ public class VoxelObject : MonoBehaviour
             RebuildMesh();
             return;
         }
-        Debug.Log(solidVoxelCount);
 
         if (removedThisFrame > 0)
         {

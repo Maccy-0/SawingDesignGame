@@ -39,7 +39,6 @@ public class ItemSpawner : MonoBehaviour
 
         if (objectSpawned == true) {
             playTimer += (playTimer + 0.1f) * Time.deltaTime;
-            Debug.Log(playTimer);
         }
 
         if (playTimer >= 6) {

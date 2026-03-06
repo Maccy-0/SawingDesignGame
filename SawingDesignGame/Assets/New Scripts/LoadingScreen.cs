@@ -11,6 +11,5 @@ public class LoadingScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(this.gameObject);
     }
 }

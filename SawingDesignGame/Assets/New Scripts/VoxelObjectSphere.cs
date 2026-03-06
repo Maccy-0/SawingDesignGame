@@ -249,8 +249,6 @@ public class VoxelObjectSphere : MonoBehaviour
     {
         removedThisFrame = 0;
 
-        Debug.Log("Working24");
-
         for (int x = 0; x < sizeX; x++)
         {
             for (int y = 0; y < sizeY; y++)
@@ -271,9 +269,6 @@ public class VoxelObjectSphere : MonoBehaviour
                 }
             }
         }
-
-        if (removedThisFrame > 0)
-            Debug.Log($"Removed {removedThisFrame} voxels");
 
         if (removedThisFrame > 0)
             RebuildMesh();
