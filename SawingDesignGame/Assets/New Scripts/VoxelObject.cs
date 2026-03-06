@@ -5,11 +5,11 @@ using System.Collections;
 
 public class VoxelObject : MonoBehaviour
 {
-    int sizeX = 32;
-    int sizeY = 32;
-    int sizeZ = 32;
+    int sizeX = 48;
+    int sizeY = 48;
+    int sizeZ = 48;
 
-    float voxelSize = 1 / 32f;
+    float voxelSize = 1 / 48f;
     float trueScale;
 
     public bool[,,] voxels;
