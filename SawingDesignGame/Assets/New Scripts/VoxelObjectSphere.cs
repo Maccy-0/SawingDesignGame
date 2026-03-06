@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class VoxelObjectSphere : MonoBehaviour
 {
-    public int sizeX = 32;
-    public int sizeY = 32;
-    public int sizeZ = 32;
+    public int sizeX = 48;
+    public int sizeY = 48;
+    public int sizeZ = 48;
 
-    public float voxelSize = 0.1f;
+    public float voxelSize = 0.075f;
 
     public bool[,,] voxels;
 
