@@ -36,6 +36,7 @@ public class ObjectPickup : MonoBehaviour
             isHolding = true;
             pickupRigidbody.useGravity = false;
             pickupRigidbody.freezeRotation = true;
+            pickupText.SetActive(false);
         } else if (Input.GetKeyDown(KeyCode.E) && isHolding) //Drop Object
         {
             pickupText.SetActive(true);
@@ -66,6 +67,7 @@ public class ObjectPickup : MonoBehaviour
             else
             {
                 pickupObj = null;
+                pickupText.SetActive(false);
             }
         }
     }
