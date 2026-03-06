@@ -26,6 +26,7 @@ public class RunInLazer : MonoBehaviour
     {
         if(collision.transform.name == lazer.transform.name)
         {
+            Debug.Log("runin");
             dmgScreen.tintColor = fullAlpha;
         }
     }
