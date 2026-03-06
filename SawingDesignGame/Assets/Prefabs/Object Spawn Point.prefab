@@ -5100,7 +5100,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earthObjects:
-  - {fileID: 8624544780078465175, guid: f04af0f4e2c8872468a619de28217004, type: 3}
+  - {fileID: 3439701606286741622, guid: 770be364d6a032e4a9d9a805b71dac23, type: 3}
+  - {fileID: 6881875840902502150, guid: 034c377ebe04c4641aae7f7289ae7f84, type: 3}
+  - {fileID: 5071587579244109426, guid: ed83c401a5bcce740a8ca4ece35e8fa0, type: 3}
+  - {fileID: 1251148620517133514, guid: 98c88cc59c2a0d34eae16056c38d1f1d, type: 3}
+  - {fileID: 707591566999019831, guid: b93bd50d8039e954789c7959c802e825, type: 3}
+  - {fileID: 6763085759275431667, guid: 262a6415a01191646a0d59a708afcdb5, type: 3}
+  - {fileID: 5237027812623768465, guid: 467b9cbeae38f174d9e39b2da718e512, type: 3}
+  - {fileID: 6903137112150841159, guid: 808e96d6385edaa4c94ac3ed3cf74505, type: 3}
+  - {fileID: 3984263670254155014, guid: 09bb69aaa2f1f014599ee77788b3794e, type: 3}
+  - {fileID: 1556005595431240962, guid: ca8a4fccae338244fad394dd59e53742, type: 3}
+  - {fileID: 931259960443206650, guid: 8bce4d06fb4c7e34f9ed4916038c0da4, type: 3}
+  - {fileID: 7212508769486198930, guid: 17cd2fbd4bb2de245afe669710db1492, type: 3}
+  - {fileID: 3415685558182371634, guid: 920c06da15121ce4fa22c831832deaf9, type: 3}
+  - {fileID: 4857997481259331900, guid: 56799e09d6ef6f54aa7ea968b204385e, type: 3}
   spawnButton: {fileID: 0}
   conveyorSpeed: 277.9
   beamingParticles: {fileID: 6703155989487280378}
