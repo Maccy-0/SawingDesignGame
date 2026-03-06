@@ -716,10 +716,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
-    - target: {fileID: 6881875840902502150, guid: 034c377ebe04c4641aae7f7289ae7f84, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -924,10 +920,6 @@ PrefabInstance:
     - target: {fileID: 3439701606286741622, guid: 770be364d6a032e4a9d9a805b71dac23, type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439701606286741622, guid: 770be364d6a032e4a9d9a805b71dac23, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4140,10 +4132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
-    - target: {fileID: 3415685558182371634, guid: 920c06da15121ce4fa22c831832deaf9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7244,10 +7232,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3110501308543055670, guid: ed83c401a5bcce740a8ca4ece35e8fa0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3110501308543055670, guid: ed83c401a5bcce740a8ca4ece35e8fa0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.1
       objectReference: {fileID: 0}
@@ -7287,17 +7271,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.402
       objectReference: {fileID: 0}
-    - target: {fileID: 3110501308543055670, guid: ed83c401a5bcce740a8ca4ece35e8fa0, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5071587579244109426, guid: ed83c401a5bcce740a8ca4ece35e8fa0, type: 3}
       propertyPath: m_Name
       value: Bucket
-      objectReference: {fileID: 0}
-    - target: {fileID: 5071587579244109426, guid: ed83c401a5bcce740a8ca4ece35e8fa0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9728,10 +9704,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cup
       objectReference: {fileID: 0}
-    - target: {fileID: 6763085759275431667, guid: 262a6415a01191646a0d59a708afcdb5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10406,10 +10378,6 @@ PrefabInstance:
     - target: {fileID: 5237027812623768465, guid: 467b9cbeae38f174d9e39b2da718e512, type: 3}
       propertyPath: m_Name
       value: Gaming Chair
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237027812623768465, guid: 467b9cbeae38f174d9e39b2da718e512, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5430282797583553690, guid: 467b9cbeae38f174d9e39b2da718e512, type: 3}
       propertyPath: m_LocalPosition.x
