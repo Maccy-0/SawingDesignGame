@@ -236,9 +236,9 @@ public class VoxelObject : MonoBehaviour
     Vector3 VoxelToWorld(int x, int y, int z)
     {
         Vector3 localPos = new Vector3(
-        (x + 0.5f) * voxelSize,
-        (y + 0.5f) * voxelSize,
-        (z + 0.5f) * voxelSize
+        (x + 0.2f) * voxelSize,
+        (y + 0.2f) * voxelSize,
+        (z + 0.2f) * voxelSize
         );
 
         localPos -= voxelOriginOffset;
