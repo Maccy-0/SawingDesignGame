@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class RunInLazer : MonoBehaviour
 {
@@ -11,23 +11,22 @@ public class RunInLazer : MonoBehaviour
     void Start()
     {
         dmgScreen = Screen.GetComponent<Image>();
-        fullAlpha = dmgScreen.tintColor;
-        fullAlpha.a = 255;
+        fullAlpha = dmgScreen.color;
+        fullAlpha.a = 100;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.transform.name == lazer.transform.name)
+        if (other.transform.name == lazer.transform.name)
         {
-            Debug.Log("runin");
-            dmgScreen.tintColor = fullAlpha;
+            dmgScreen.color = fullAlpha;
         }
+        other = null;
     }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Fade : MonoBehaviour
 {
@@ -17,8 +17,8 @@ public class Fade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        screenTint = dmgScreen.tintColor;
+        screenTint = dmgScreen.color;
         screenTint.a -= Time.deltaTime * speed;
-        dmgScreen.tintColor = screenTint;
+        dmgScreen.color = screenTint;
     }
 }
